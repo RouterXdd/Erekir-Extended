@@ -1,0 +1,22 @@
+name: Beryllium Projector
+type: OverdriveProjector
+planet: erekir
+size: 3
+health: 1080
+range: 75
+speedBoost: 1.8
+category: effect
+hasBoost: false
+requirements: [
+  graphite/265
+  silicon/320
+]
+consumes: {
+  power: 2.6
+  items: {
+    items: [
+      beryllium/3
+    ]
+  }
+}
+research: core-bastion

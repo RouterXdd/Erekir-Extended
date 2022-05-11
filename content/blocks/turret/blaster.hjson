@@ -1,0 +1,36 @@
+type: itemTurret
+planet: erekir
+name: "Blaster"
+description: "Shoot the strong stun bullet"
+health: 1910
+shots: 1
+size: 3
+reload: 170
+range: 280
+ammoTypes:{
+    graphite:{
+        speed: 6
+        lifetime: 46.6
+        damage: 100
+        width: 10
+        height: 13
+        status: unmoving
+        statusDuration: 120
+    }
+    tungsten:{
+        speed: 6
+        lifetime: 46.6
+        damage: 180
+        width: 10
+        height: 13
+        status: unmoving
+        statusDuration: 160
+    }
+}
+category: turret
+research: ecription
+requirements: [
+    graphite/320
+    silicon/275
+    beryllium/290
+]
