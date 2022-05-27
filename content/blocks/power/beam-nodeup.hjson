@@ -1,0 +1,16 @@
+name: Carbide Node
+planet: erekir
+type: beamNode
+health: 160
+size: 1
+range: 16
+fogRadius: 1
+consumes: {
+    powerBuffered: 3000
+    }
+requirements: [
+    beryllium/6
+    carbide/4
+]
+category: power
+research: beam-node

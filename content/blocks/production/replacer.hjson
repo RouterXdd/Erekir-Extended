@@ -1,0 +1,24 @@
+type: genericCrafter
+health: 90
+size: 3
+hasPower: true
+hasItems: true
+consumes: {
+  power: 3.75
+  items: {
+    items: [
+     oxide/1
+    ]
+  }
+}
+outputItem: tungsten/3
+outputLiquid: radon/0.065
+craftTime: 255
+category: crafting
+research: oxidation-chamber
+requirements: [
+  graphite/175
+  silicon/235
+  tungsten/135
+  oxide/35
+]

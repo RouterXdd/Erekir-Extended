@@ -1,0 +1,29 @@
+name: Peweless
+type: ContinuousLiquidTurret
+size: 2
+range: 150
+health: 1635
+rotateSpeed: 1.65
+shootSound: laser
+shootShake: 1.1
+liquidConsumed: 0.4
+planet: erekir
+consumes: {
+power: 3.08
+}
+ammoTypes: {
+  water: {
+  type: ContinuousFlameBulletType
+  length: 180
+  damage: 20
+  pierceCap: 4
+  colors: ["0071e4", "3c9cff", "1287ff"]
+  }
+}
+category: turret
+research: diffuse
+requirements: [
+  silicon/295
+  tungsten/190
+  oxide/155
+]

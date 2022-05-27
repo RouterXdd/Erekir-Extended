@@ -1,0 +1,44 @@
+name: Rubid
+type: tank
+hitSize: 20
+flying: false
+health: 1750
+armor: 6
+speed: 0.85
+rotateSpeed: 4
+range: 50
+itemCapacity: 0
+treadPullOffset: 4
+planet: erekir
+weapons: [
+ {
+    name: rubid-weapon
+    x: 0
+    y: 8
+    mirror: false
+    shootSound: pew
+    reload: 15
+    shots: 5
+    bullet: {
+      type: BasicBulletType
+      sprite: missile-large
+      damage: 20
+      speed: 8
+      lifetime: 6.25
+      recoil: 1
+      width: 12
+      height: 14
+      trailWidth: 1.6
+      trailLength: 3
+      shootEffect: none
+      smokeEffect: none
+    }
+  }
+]
+research:{
+parent: rubid-refabricator
+requirements: [
+silicon/1550
+rubidium/750
+]
+}

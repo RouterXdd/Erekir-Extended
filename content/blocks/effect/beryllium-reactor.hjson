@@ -7,6 +7,7 @@ range: 75
 speedBoost: 1.8
 category: effect
 hasBoost: false
+fogRadius: 3
 requirements: [
   graphite/265
   silicon/320

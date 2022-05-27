@@ -1,0 +1,31 @@
+type: BeamDrill
+name: LargePlasma Drill
+description: Faster than the large plasma bore
+tier: 5
+drillTime: 94
+size: 3
+range: 8
+hasPower: true
+updateEffect: pulverizeRed
+updateEffectChance: 0.03
+drillEffect: mineHuge
+rotateSpeed: 6
+warmupSpeed: 0.01
+itemCapacity: 20
+liquidBoostIntensity: 1.8
+consumes: {
+  power: 0.35
+  liquid: {
+      liquid: hydrogen
+    amount: 0.010833
+    booster: false
+  }
+}
+category: production
+requirements: [
+  graphite/125
+  beryllium/155
+  silicon/120
+  oxide/20
+]
+research: large-plasma-bore
