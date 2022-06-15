@@ -1,5 +1,4 @@
 type: OreBlock
 wallOre: true
-name: Rubidium (Wall)
 itemDrop: rubidium
 variants: 2

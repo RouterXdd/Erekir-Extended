@@ -1,5 +1,4 @@
-localizedName: "Unstable Sector"
-description: "This sector have unstable power. You will have a help with capture"
+
 captureWave: 25
 planet: erekir
 sector: 17

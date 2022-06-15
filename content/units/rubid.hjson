@@ -1,5 +1,5 @@
 name: Rubid
-erekirType: tank
+type: tank
 hitSize: 20
 flying: false
 health: 1750
@@ -9,6 +9,7 @@ rotateSpeed: 4
 range: 50
 itemCapacity: 0
 treadPullOffset: 4
+planet: erekir
 weapons: [
  {
     name: rubid-weapon

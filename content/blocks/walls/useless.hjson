@@ -2,3 +2,4 @@ type: wall
 name: Useless block
 description: It is Useless
 nealth: 1200
+hidden: true
