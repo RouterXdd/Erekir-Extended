@@ -3,12 +3,11 @@ type: PowerTurret
 size: 3
 range: 360
 health: 550
-reloadTime: 140
+reload: 80
 rotateSpeed: 3.4
-targetHealing: true
 shootSound: laser
-shootShake: 1.5
-planet: erekir
+shake: 1.5
+shootY: -0.8
 consumes: {
 power: 1.6
 liquid:{
@@ -54,6 +53,7 @@ shootType: {
   scaleVelocity: true
   splashDamage: 100
   splashDamageRadius: 40
+  damage: 0
   radius: 0
   unitDamageScl: 1
   timeIncrease: 1.25

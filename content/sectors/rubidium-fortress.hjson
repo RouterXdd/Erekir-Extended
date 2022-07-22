@@ -2,4 +2,12 @@
 planet: erekir
 sector: 57
 difficulty: 7
-research: three
+research: {
+parent: intersect
+objectives: [
+    {
+      type: SectorComplete
+      preset: intersect
+    }
+  ]
+}

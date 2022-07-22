@@ -3,6 +3,8 @@ planet: erekir
 name: Rubidium radar
 outlineColor: 4a4b53
 fogRadius: 56
+envEnabled: 17
+envDisabled: 0
 consumes:{
     power: 1.1
 }
@@ -12,6 +14,7 @@ requirements: [
     rubidium/25
 ]
 category: effect
+buildVisibility: fogOnly
 research:{
     parent: radar
     requirements: [

@@ -3,4 +3,12 @@ captureWave: 10
 planet: erekir
 sector: 69
 difficulty: 12
-research: fort
+research: {
+parent: fort
+objectives: [
+    {
+      type: SectorComplete
+      preset: fort
+    }
+  ]
+}

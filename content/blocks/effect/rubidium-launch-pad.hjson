@@ -1,0 +1,25 @@
+type: launchPad
+size: 3
+consumes:{
+    power: 4.5
+}
+itemCapacity: 100
+launchTime: 28
+hasPower: true
+category: effect
+buildVisibility: campaignOnly
+research: {
+    parent: armored-duct
+objectives: [
+    {
+      type: OnSector
+      preset: rubidium-fortress
+    }
+  ]
+}
+requirements: [
+ beryllium/300
+ graphite/245
+ silicon/290
+ rubidium/160
+]

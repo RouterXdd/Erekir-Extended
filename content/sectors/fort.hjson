@@ -3,4 +3,12 @@ captureWave: 2
 planet: erekir
 sector: 38
 difficulty: 3
-research: unstable-sector
+research: {
+parent: unstable-sector
+objectives: [
+    {
+      type: SectorComplete
+      preset: unstable-sector
+    }
+  ]
+}

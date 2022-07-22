@@ -17,15 +17,16 @@ consumes: {
   power: 0.35
   liquid: {
       liquid: hydrogen
-    amount: 0.010833
+    amount: 0.01085
     booster: false
   }
 }
 category: production
 requirements: [
-  graphite/125
+  graphite/75
   beryllium/155
   silicon/120
-  oxide/20
+  tungsten/170
+  oxide/40
 ]
 research: large-plasma-bore

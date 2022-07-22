@@ -1,15 +1,14 @@
 type: HeatCrafter
-planet: erekir
 size: 2
 hasPower: true
 hasItems: true
+squareSprite: false
 craftEffect: {
   type: ParticleEffect
   lifetime: 30
   length: 9
   colorTo: ea8878
 }
-flameColor: feb380
 consumes: {
   power: 2.5
   items: {
@@ -19,11 +18,22 @@ consumes: {
     ]
   }
 }
+drawer: [
+  {
+    type: DrawDefault
+  }
+  {
+    type: DrawGlowRegion
+    suffix: -glow
+    alpha: 2
+    color: e65555
+  }
+]
 heatRequirement: 3
 craftTime: 500
 outputItem: carbide/1
 category: crafting
-research: oxidation-chamber
+research: electric-heater
 requirements: [
   graphite/100
   silicon/125

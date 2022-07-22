@@ -1,0 +1,16 @@
+name: Rubidium Node
+type: beamNode
+health: 160
+size: 1
+range: 6
+fogRadius: 1
+placeableLiquid: true
+consumes: {
+    powerBuffered: 3000
+    }
+requirements: [
+    beryllium/6
+    rubidium/6
+]
+category: power
+research: beam-node

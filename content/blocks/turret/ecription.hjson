@@ -1,26 +1,30 @@
 type: itemTurret
-planet: erekir
 name: "Ecription"
 description: "Fast shoots the bullets"
 health: 1740
-shots: 1
 size: 3
-reloadTime: 30
+reload: 10
 range: 200
+outlineColor: "2a2c35"
+squareSprite: false
 ammoTypes:{
     beryllium:{
         speed: 5
         lifetime: 40
-        damage: 20
+        damage: 25
         width: 8
         height: 10
+        ammoMultiplier: 2
+        buildingDamageMultiplier: 0.3
     }
     silicon:{
         speed: 5
         lifetime: 40
-        damage: 30
+        damage: 38
         width: 8
         height: 10
+        ammoMultiplier: 3
+        buildingDamageMultiplier: 0.3
     }
 }
 category: turret

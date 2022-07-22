@@ -3,4 +3,12 @@ captureWave: 25
 planet: erekir
 sector: 17
 difficulty: 10
-research: four
+research: {
+parent: basin
+objectives: [
+    {
+      type: SectorComplete
+      preset: basin
+    }
+  ]
+}

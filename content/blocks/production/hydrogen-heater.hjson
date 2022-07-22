@@ -1,0 +1,40 @@
+type: HeatProducer
+health: 460
+size: 2
+liquidCapacity: 25
+hasLiquids: true
+consumes:{
+    liquid: {
+        liquid: hydrogen
+        amount: 0.015
+    }
+}
+rotateDraw: false
+regionRotated1: 1
+heatOutput: 2
+drawer: {
+    type: DrawMulti
+    drawers: [
+        {
+        type: DrawRegion
+  suffix: "-bottom"
+  }
+  {
+     type: DrawLiquidTile
+     drawLiquid: hydrogen
+    }
+        {
+            type: DrawDefault
+        }
+        {
+            type: DrawHeatOutput
+        }
+    ]
+}
+category: crafting
+research: electric-heater
+requirements: [
+    graphite/35
+    tungsten/20
+    beryllium/50
+]

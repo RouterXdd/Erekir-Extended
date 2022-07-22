@@ -2,4 +2,12 @@
 planet: erekir
 sector: 12
 difficulty: 8
-research: omegaoutpost
+research: {
+parent: omegaoutpost
+objectives: [
+    {
+      type: SectorComplete
+      preset: omegaoutpost
+    }
+  ]
+}

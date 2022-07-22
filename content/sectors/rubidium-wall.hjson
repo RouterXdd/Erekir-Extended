@@ -3,4 +3,12 @@ captureWave: 30
 planet: erekir
 sector: 58
 difficulty: 8
-research: rubidium-fortress
+research: {
+parent: rubidium-fortress
+objectives: [
+    {
+      type: SectorComplete
+      preset: rubidium-fortress
+    }
+  ]
+}

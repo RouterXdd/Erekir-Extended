@@ -3,6 +3,11 @@ health: 90
 size: 3
 hasPower: true
 hasItems: true
+hasLiquids: true
+rotate: true
+invertFlip: true
+regionRotated1: 3
+liquidOutputDirections: [1, 4]
 consumes: {
   power: 3.75
   items: {
@@ -11,8 +16,28 @@ consumes: {
     ]
   }
 }
-outputItem: tungsten/3
-outputLiquid: radon/0.065
+drawer:{
+  type: DrawMulti
+  drawers: [
+    {
+     type: DrawRegion
+     suffix: -bottom
+    }
+    {
+     type: DrawLiquidRegion
+     drawLiquid: radon
+    }
+    {
+     type: DrawRegion
+     suffix: -main
+    }
+  ]
+}
+outputItem: tungsten/2
+outputLiquids: [
+  radon/0.08
+  tungllium/0.035
+  ]
 craftTime: 255
 category: crafting
 research: oxidation-chamber
