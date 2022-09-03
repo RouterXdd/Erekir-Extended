@@ -2,6 +2,7 @@ name: Rubid
 type: tank
 hitSize: 20
 flying: false
+omniMovement: false
 health: 2450
 armor: 6
 speed: 0.85
