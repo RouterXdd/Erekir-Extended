@@ -1,7 +1,7 @@
 
 captureWave: 20
 planet: erekir
-sector: 79
+sector: 78
 difficulty: 5
 research: {
 parent: aegis

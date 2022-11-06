@@ -4,7 +4,7 @@ consumes:{
     power: 4.5
 }
 itemCapacity: 100
-launchTime: 28
+launchTime: 280
 hasPower: true
 category: effect
 buildVisibility: campaignOnly
