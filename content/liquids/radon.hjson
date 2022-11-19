@@ -1,8 +1,0 @@
-name: Radon
-gas: true
-heatCapacity: 0
-explosiveness: 0
-flammability: 0
-research: hydrogen
-color: 29a600
-lightColor: 29a600

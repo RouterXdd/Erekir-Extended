@@ -1,8 +1,0 @@
-name: "Server"
-description: "This is end of hacker"
-type: CoreBlock
-health: 10000
-size: 3
-itemCapacity: 10000
-unitCapModifier: 20
-unitType: emanate
