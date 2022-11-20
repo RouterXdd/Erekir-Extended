@@ -1,0 +1,12 @@
+planet: erekir
+sector: 85
+difficulty: 7
+research: {
+parent: siege
+objectives: [
+    {
+      type: SectorComplete
+      preset: siege
+    }
+  ]
+}
