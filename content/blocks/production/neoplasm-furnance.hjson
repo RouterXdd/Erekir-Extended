@@ -1,0 +1,65 @@
+type: HeatCrafter
+health: 630
+size: 3
+hasPower: true
+hasLiquids: true
+hasItems: true
+craftEffect: none
+squareSprite: false
+consumes: {
+  power: 3.9
+  items: {
+    items: [
+      tungsten/2
+    ]
+  }
+  liquid: {
+    liquid: slag
+    amount: 0.25
+  }
+}
+drawer: {
+   type: DrawMulti
+        drawers: [
+        {
+        type: DrawRegion
+  suffix: "-bottom"
+  layer: -1
+        }
+        {
+          type: drawArcSmelt
+    flameColor: "F98F4AFF"
+    midColor: "E05438FF"
+    flameRad: 1
+    circleSpace: 0.4
+    circleStroke: 0.7
+    alpha: 4
+    particleRad: 6
+    particles: 10
+    particleLen: 1.3
+    particleStroke: 0.5
+    particleLife: 6
+        }
+        {
+  type: DrawDefault
+     }
+  ]
+  }
+  heatRequirement: 3
+craftTime: 185
+outputLiquid: neoplasm/0.3
+category: crafting
+research: {
+parent: electric-heater
+objectives: [
+  {
+    type: OnSector
+    preset: abandoned-factory
+  }
+  ]
+}
+requirements: [
+  graphite/360
+  silicon/225
+  tungsten/185
+]

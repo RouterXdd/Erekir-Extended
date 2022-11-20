@@ -1,0 +1,31 @@
+name: Silicon piper
+description: Pipes Slag and frezze to silicon
+type: WallCrafter
+health: 275
+size: 2
+drillTime: 90
+attribute: water
+fogradius: 2
+rotateSpeed: 0
+envEnabled: -1
+envDisabled: 4
+consumes: {
+    power: 0.09
+}
+output: silicon
+category: production
+research: {
+    parent: cliff-crusher
+    objectives: [
+  {
+    type: OnSector
+    preset: abandoned-factory
+  }
+  ]
+    requirements: [
+    graphite/235
+]
+    }
+requirements: [
+    graphite/65
+]

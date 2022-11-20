@@ -1,0 +1,33 @@
+type: ConsumeGenerator
+health: 140
+size: 2
+hasPower: true
+hasItems: true
+powerProduction: 1.7
+itemDuration: 168
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawDefault
+    }
+    {
+      type: DrawWarmupRegion
+    }
+  ]
+}
+consumes: {
+  items: {
+  items: [
+beryllium/2
+graphite/1
+]
+}
+}
+category: power
+research: beam-node
+requirements: [
+    silicon/145
+ beryllium/120
+ graphite/90
+]

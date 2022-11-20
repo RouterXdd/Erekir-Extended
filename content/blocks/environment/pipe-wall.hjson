@@ -1,0 +1,6 @@
+name: Pipe
+type: staticWall
+variants: 1
+attributes:{
+    water: 1
+}

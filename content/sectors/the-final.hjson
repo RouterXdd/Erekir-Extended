@@ -1,0 +1,13 @@
+
+planet: erekir
+sector: 75
+difficulty: 12
+research: {
+parent: hacker-trap
+objectives: [
+    {
+      type: SectorComplete
+      preset: hacker-trap
+    }
+  ]
+}

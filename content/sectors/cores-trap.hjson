@@ -1,0 +1,13 @@
+
+planet: erekir
+sector: 21
+difficulty: 7
+research: {
+parent: omegaoutpost
+objectives: [
+    {
+      type: SectorComplete
+      preset: omegaoutpost
+    }
+  ]
+}

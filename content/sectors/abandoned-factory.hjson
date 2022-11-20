@@ -1,0 +1,12 @@
+planet: erekir
+sector: 62
+difficulty: 8
+research: {
+parent: blade-base
+objectives: [
+    {
+      type: SectorComplete
+      preset: blade-base
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+type: Pump
+size: 3
+health: 760
+hasPower: true
+consumes: {
+  power: 2.8
+  liquid:{
+    liquid: nitrogen
+    amount: 0.02
+  }
+}
+pumpAmount: 0.35
+squareSprite: false
+liquidCapacity: 220
+requirements: [
+  silicon/65
+  graphite/45
+  beryllium/80
+  tungsten/45
+]
+category: liquid
+research: reinforced-pump

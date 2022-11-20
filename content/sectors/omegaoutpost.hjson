@@ -1,0 +1,14 @@
+
+planet: erekir
+sector: 6
+difficulty: 7
+research: {
+parent: intersect
+objectives: [
+    {
+      type: SectorComplete
+      preset: intersect
+    }
+  ]
+}
+

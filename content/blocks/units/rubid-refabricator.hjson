@@ -1,0 +1,36 @@
+type: Reconstructor
+name: "Rubidium Refabricator"
+size: 3
+health: 550
+description: "Upgrades stell to rubid"
+constructTime: 3875
+upgrades: [
+  [stell, rubid]
+]
+consumes: {
+power: 3.6
+liquid:{
+    liquid: hydrogen
+    amount: 0.084
+}
+items:{
+  items: [
+  silicon/45
+  rubidium/55
+  ]
+}
+}
+category: units
+research: {
+parent: tank-fabricator
+objectives: [
+  {
+    type: OnSector
+    preset: rubidium-fortress
+  }
+  ]
+}
+requirements: [
+  rubidium/180
+  silicon/270
+]

@@ -1,0 +1,57 @@
+name: Rubid
+type: tank
+hitSize: 20
+flying: false
+omniMovement: false
+health: 2450
+armor: 6
+speed: 0.85
+rotateSpeed: 4
+range: 80
+itemCapacity: 0
+treadPullOffset: 4
+treadRects: [
+  {
+  x: 3
+  y: 2
+  width: 2
+  height: 5
+  }
+  {
+  x: 5
+  height: 5
+  }
+]
+envEnabled: 17
+envDisabled: 0
+outlineColor: "2d2f39"
+weapons: [
+ {
+    name: rubid-weapon
+    x: 0
+    y: 8
+    mirror: false
+    shootSound: pew
+    reload: 12.5
+    shoot: {
+type: ShootSpread
+shots: 10
+spread: 3
+}
+    bullet: {
+      type: BasicBulletType
+      sprite: missile-large
+      damage: 30
+      speed: 8
+      lifetime: 10
+      recoil: 0.1
+      width: 8
+      height: 10
+      trailWidth: 1.6
+      trailLength: 3
+      shootEffect: none
+      smokeEffect: none
+    }
+  }
+]
+research: rubid-refabricator

@@ -1,6 +1,5 @@
 name: "erek"
 displayName: "Erekir Extended"
-main: erek.ErekirExtended
 author: "RouterXdd"
 description: "Add the new sectors and content on Erekir"
 version: "0.3"

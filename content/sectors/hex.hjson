@@ -1,0 +1,15 @@
+
+captureWave: 20
+planet: erekir
+sector: 78
+difficulty: 5
+research: {
+parent: aegis
+objectives: [
+    {
+      type: SectorComplete
+      preset: aegis
+    }
+  ]
+}
+
