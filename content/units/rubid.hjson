@@ -28,15 +28,16 @@ outlineColor: "2d2f39"
 weapons: [
  {
     name: rubid-weapon
+    rotate: true
     x: 0
-    y: 8
+    y: 0
     mirror: false
     shootSound: pew
-    reload: 12.5
+    reload: 15
     shoot: {
 type: ShootSpread
-shots: 10
-spread: 3
+shots: 7
+spread: 7
 }
     bullet: {
       type: BasicBulletType
@@ -47,6 +48,33 @@ spread: 3
       recoil: 0.1
       width: 8
       height: 10
+      trailWidth: 1.6
+      trailLength: 3
+      shootEffect: none
+      smokeEffect: none
+    }
+  }
+  {
+    name: central-rubid-weapon
+    x: 0
+    y: 8
+    mirror: false
+    shootSound: pew
+    reload: 9
+    shoot: {
+type: ShootSpread
+shots: 5
+spread: 6
+}
+    bullet: {
+      type: BasicBulletType
+      sprite: missile-large
+      damage: 10
+      speed: 8
+      lifetime: 12
+      recoil: 0.15
+      width: 5
+      height: 7
       trailWidth: 1.6
       trailLength: 3
       shootEffect: none
