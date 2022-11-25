@@ -4,8 +4,8 @@ size: 3
 width: 42
 length: 54
 shieldHealth: 1700
-cooldownNormal: 1.25
-cooldownBrokenBase: 0.25
+cooldownNormal: 0.30
+cooldownBrokenBase: 0.40
 consumes: {
   power: 3
 }
