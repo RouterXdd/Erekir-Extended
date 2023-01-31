@@ -4,6 +4,8 @@ health: 160
 size: 1
 range: 16
 fogRadius: 1
+consumesPower: true
+outputsPower: true
 consumes: {
     powerBuffered: 3000
     }

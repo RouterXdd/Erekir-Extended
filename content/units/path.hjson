@@ -1,0 +1,48 @@
+type: crawl
+health: 2560
+flying: false
+range: 140
+speed: 1.3
+armor: 5
+hitsize: 14
+omniMovement: false
+rotateSpeed: 2.6
+drownTimeMultiplier: 1.2
+segments: 3
+drawBody: false
+drawCell: false
+crushDamage: 0.5
+controller: HugAI
+segmentScl:3
+segmentPhase: 3
+segmentMag: 0.5
+envEnabled: 17
+envDisabled: 0
+outlineColor: "2d2f39"
+research: hug-fabricator
+weapons: [
+ {
+    name: path-weapon
+    rotate: true
+    x: 0
+    y: 0
+    mirror: false
+    shootSound: pew
+    reload: 34
+    bullet: {
+      type: BasicBulletType
+      sprite: missile-large
+      damage: 12
+      speed: 10
+      lifetime: 14
+      recoil: 0
+      width: 5
+      height: 8
+      trailWidth: 3
+      trailLength: 4.6
+      trailColor: "486acd"
+      shootEffect: none
+      smokeEffect: none
+    }
+  }
+]
