@@ -1,0 +1,39 @@
+type: Reconstructor
+name: "Heal Refabricator"
+regionSuffix: "-dark"
+size: 3
+health: 750
+description: "Upgrades Repair units to T2"
+constructTime: 3875
+upgrades: [
+  [heal, regeneration]
+]
+consumes: {
+power: 3.8
+liquid:{
+    liquid: hydrogen
+    amount: 0.09
+}
+items:{
+  items: [
+    beryllium/30
+  silicon/60
+  tungsten/50
+  ]
+}
+}
+category: units
+research: {
+parent: heal-fabricator
+objectives: [
+  {
+    type: OnSector
+    preset: substruction
+  }
+  ]
+}
+requirements: [
+  beryllium/400
+  silicon/280
+  tungsten/130
+]

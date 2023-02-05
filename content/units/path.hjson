@@ -19,7 +19,7 @@ segmentMag: 0.5
 envEnabled: 17
 envDisabled: 0
 outlineColor: "2d2f39"
-research: hug-fabricator
+research: hug-refabricator
 weapons: [
  {
     name: path-weapon
