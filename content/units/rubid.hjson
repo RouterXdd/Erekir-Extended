@@ -9,6 +9,7 @@ speed: 0.85
 rotateSpeed: 4
 range: 80
 itemCapacity: 0
+treadFrames: 10
 treadPullOffset: 4
 treadRects: [
   {
