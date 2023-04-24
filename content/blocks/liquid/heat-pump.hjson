@@ -3,7 +3,7 @@ size: 3
 health: 760
 hasPower: true
 consumes: {
-  power: 2.8
+  power: 3.6
   liquid:{
     liquid: nitrogen
     amount: 0.02
