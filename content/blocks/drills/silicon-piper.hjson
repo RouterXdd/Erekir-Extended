@@ -27,5 +27,6 @@ research: {
 ]
     }
 requirements: [
+    beryllium/20
     graphite/65
 ]

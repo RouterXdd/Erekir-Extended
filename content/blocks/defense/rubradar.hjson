@@ -6,7 +6,7 @@ fogRadius: 56
 envEnabled: 17
 envDisabled: 0
 consumes:{
-    power: 1.1
+    power: 1.8
 }
 requirements: [
     silicon/90

@@ -11,6 +11,7 @@ fogRadius: 3
 envEnabled: 17
 envDisabled: 0
 requirements: [
+  beryllium/340
   graphite/265
   silicon/320
 ]
@@ -30,7 +31,7 @@ consumes: {
   power: 2.6
   items: {
     items: [
-      beryllium/3
+      beryllium/5
     ]
   }
 }

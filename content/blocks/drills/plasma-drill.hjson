@@ -24,7 +24,8 @@ consumes: {
 }
 category: production
 requirements: [
-  graphite/35
+  graphite/45
+  silicon/30
   beryllium/65
 ]
 research: plasma-bore
