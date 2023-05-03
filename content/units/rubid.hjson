@@ -13,14 +13,16 @@ treadFrames: 10
 treadPullOffset: 4
 treadRects: [
   {
-  x: 3
-  y: 2
-  width: 2
-  height: 5
+  x: 8.25
+  y: -9.75
+  width: 5.5
+  height: 19.5
   }
   {
-  x: 5
-  height: 5
+  x: -8.25
+  y: -9.75
+  width: 5.5
+  height: 19.5
   }
 ]
 envEnabled: 17

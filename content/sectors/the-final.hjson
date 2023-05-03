@@ -1,7 +1,7 @@
 
 planet: erekir
 sector: 75
-difficulty: 12
+difficulty: 13
 research: {
 parent: hacker-trap
 objectives: [
