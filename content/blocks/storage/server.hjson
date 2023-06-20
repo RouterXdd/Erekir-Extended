@@ -1,5 +1,5 @@
 name: "Server"
-description: "This is end of hacker"
+description: "This is the connection point of hacker"
 type: CoreBlock
 health: 10000
 size: 3

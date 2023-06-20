@@ -4,20 +4,20 @@ health: 2360
 size: 4
 reload: 260
 range: 340
-shootY: -1.2
+shootY: 3
 outlineColor: "2a2c35"
 squareSprite: false
 ammoTypes:{
     tungsten:{
         sprite: "missile-large"
         type: basicBulletType
-        damage: 84.5
+        damage: 100
         speed: 5
         width: 7.5
                     height: 13
                     lifetime: 64
                     hitSize: 6
-                    pierceCap: 2
+                    pierceCap: 4
                     pierce: true
                     pierceBuilding: true
                     hitColor: "feb380"
@@ -30,13 +30,13 @@ ammoTypes:{
                     despawnEffect: blastExplosion
                     shootEffect: shootTitan
                     smokeEffect: shootSmokeTitan
-                    splashDamageRadius: 30
+                    splashDamageRadius: 40
                     splashDamage: 80
                     trailEffect: hitSquaresColor
                     trailRotation: true
-                    trailInterval: 3
+                    trailInterval: 4
                     buildingDamageMultiplier: 0.3
-                    fragBullets: 6
+                    fragBullets: 8
                     fragBullet: {
                         type: basicBulletType
                         sprite: "missile-large"
@@ -52,8 +52,8 @@ ammoTypes:{
                     trailColor:"feb380"
                     frontColor: "ffffff"
                     trailWidth: 1.9
-                    trailLength: 3
-                    drag: 0.01
+                    trailLength: 4
+                    drag: 0.02
                     despawnEffect: hitBulletColor
                     hitEffect: hitBulletColor
                     }

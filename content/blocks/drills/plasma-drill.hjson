@@ -17,7 +17,7 @@ consumes: {
   power: 0.26
   liquid: {
     liquid: hydrogen
-    amount: 0.0083
+    amount: 0.001
     booster: true
     optional: true
   }
