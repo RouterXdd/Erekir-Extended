@@ -64,15 +64,17 @@ y: 18
 }
 {
 type: RegionPart
+suffix: -blade
 mirror: true
 moveRot: -45
 x: 4
+y: -6
 under: true
 moves: [
 {
 type: PartMove
 progress: reload
-x: 0
+x: 5
 y: -6
 rot: -70
 }
