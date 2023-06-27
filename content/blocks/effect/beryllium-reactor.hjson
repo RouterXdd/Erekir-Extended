@@ -1,10 +1,9 @@
 name: Beryllium Projector
 type: OverdriveProjector
-planet: erekir
 size: 3
 health: 1080
-range: 75
-speedBoost: 1.8
+range: 65
+speedBoost: 1.22
 category: effect
 hasBoost: false
 fogRadius: 3
@@ -15,9 +14,10 @@ requirements: [
   beryllium/340
   graphite/265
   silicon/320
+  tungsten/120
 ]
 consumes: {
-  power: 2.6
+  power: 5
   items: {
     items: [
       beryllium/5
