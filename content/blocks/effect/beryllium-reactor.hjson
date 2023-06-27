@@ -8,6 +8,7 @@ speedBoost: 1.8
 category: effect
 hasBoost: false
 fogRadius: 3
+squareSprite: false
 envEnabled: 17
 envDisabled: 0
 requirements: [

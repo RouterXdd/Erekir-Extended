@@ -6,6 +6,7 @@ size: 3
 reload: 60
 range: 190
 outlineColor: "2a2c35"
+squareSprite: false
 ammoTypes:{
     rubidium:{
         speed: 5
