@@ -7,7 +7,8 @@ reload: 80
 rotateSpeed: 3.4
 shootSound: laser
 shake: 1.5
-shootY: -0.8
+shootY: 0
+squareSprite: false
 consumes: {
 power: 1.6
 liquid:{
