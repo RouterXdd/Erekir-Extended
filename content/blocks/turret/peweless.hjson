@@ -21,6 +21,7 @@ ammoTypes: {
   colors: ["0071e4", "3c9cff", "1287ff"]
   flareColor: "0071e4"
   buildingDamageMultiplier: 0.3
+  hitColor: "0071e4"
   }
   radon: {
   type: ContinuousFlameBulletType
@@ -31,6 +32,7 @@ ammoTypes: {
   colors: ["29a600", "43c818", "56dd2b"]
   flareColor: "56dd2b"
   buildingDamageMultiplier: 0.3
+  hitColor: "56dd2b"
   }
   neoplasm: {
   type: ContinuousFlameBulletType
@@ -41,6 +43,7 @@ ammoTypes: {
   colors: ["9e172c", "e05438", "f98f4a"]
   flareColor: "f98f4a"
   buildingDamageMultiplier: 0.3
+  hitColor: "f98f4a"
   }
 }
 category: turret

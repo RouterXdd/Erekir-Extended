@@ -3,6 +3,7 @@ size: 2
 hasPower: true
 hasItems: true
 squareSprite: false
+itemCapacity: 12
 craftEffect: {
   type: ParticleEffect
   lifetime: 30
@@ -29,7 +30,7 @@ drawer: [
     color: e65555
   }
 ]
-heatRequirement: 3
+heatRequirement: 6
 craftTime: 500
 outputItem: carbide/1
 category: crafting

@@ -2,13 +2,13 @@
 captureWave: 20
 planet: erekir
 sector: 78
-difficulty: 5
+difficulty: 9
 research: {
-parent: aegis
+parent: split
 objectives: [
     {
       type: SectorComplete
-      preset: aegis
+      preset: split
     }
   ]
 }

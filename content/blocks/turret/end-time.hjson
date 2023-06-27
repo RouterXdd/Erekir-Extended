@@ -12,6 +12,7 @@ shootType:{
     pierceCap: 3
     colors: ["ffffff", "ffffff", "ffffff"]
     flareColor: ffffff
+    hitColor: ffffff
     fragBullets: 1
     fragBullet:{
       type: BasicBulletType

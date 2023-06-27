@@ -15,18 +15,6 @@ requirements: [
   graphite/265
   silicon/320
 ]
-drawer: {
-  type: DrawMulti
-  drawers:[ 
-        {
-        type: DrawRegion
-  suffix: "-bottom"
-        }
-        {
-          type: DrawDefault
-        }
-        ]
-}
 consumes: {
   power: 2.6
   items: {

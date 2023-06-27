@@ -11,6 +11,7 @@ shootType:{
   colors: ["0071e4", "3c9cff", "1287ff"]
   flareColor: "0071e4"
   buildingDamageMultiplier: 0.3
+  hitColor: "0071e4"
 }
 shootSound: laser
 shootWarmupSpeed: 1
