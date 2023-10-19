@@ -1,34 +1,35 @@
-name: "Heal fabricator"
+name: "Glider fabricator"
 type: UnitFactory
 regionSuffix: "-dark"
 health: 615
 size: 3
 configurable: false
 consumes: {
-power: 4.2
+power: 6
 }
 plans: [
   {
-    unit: heal
+    unit: slide
     requirements: [
-      silicon/60
-      beryllium/75
+      silicon/45
+      bperill/30
     ]
-    time: 2560
+    time: 3000
   }
 ]
 category: units
 requirements: [
   graphite/200
   silicon/260
-  beryllium/320
+  oxide/196
+  bperill/120
 ]
 research: {
-parent: tank-fabricator
+parent: heal-fabricator
 objectives: [
   {
     type: OnSector
-    preset: basin
+    preset: cores-trap
   }
   ]
 }

@@ -1,0 +1,11 @@
+name: "Bperill"
+description: "Erekir's gem. Uses for optical and electrical tech"
+color: "#18c99f"
+radioactivity: 0
+explosiveness: 0
+flammability: 0
+charge: 1.2
+hardness: 4
+research: {
+parent: rubidium
+}

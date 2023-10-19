@@ -14,6 +14,7 @@ spawnUnit: time-missile
   }
 drawer:{
  type: DrawTurret
+ basePrefix: reinforced-
  parts: [
 {
 type: ShapePart
@@ -24,6 +25,7 @@ hollow: true
 sides: 3
 stroke: 2
 radius: 22
+layer: 110
 rotateSpeed: 2
 }
 {
@@ -35,6 +37,7 @@ color: 87ceeb
 sides: 3
 stroke: 2
 radius: 22
+layer: 110
 rotateSpeed: -2
 }
 {
@@ -55,7 +58,7 @@ shootSound: laser
 shootWarmupSpeed: 0.4
 shootCone: 360
 rotateSpeed: 0.8
-reload: 55
+reload: 70
 outlineColor: "2a2c35"
 range: 660
 shootY: 0

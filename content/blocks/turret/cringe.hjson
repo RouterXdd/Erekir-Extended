@@ -97,6 +97,10 @@ ammoTypes:{
         height: 10
     }
 }
+drawer:{
+ type: DrawTurret
+ basePrefix: reinforced-
+}
 buildVisibility: sandboxOnly
 category: turret
 requirements: [

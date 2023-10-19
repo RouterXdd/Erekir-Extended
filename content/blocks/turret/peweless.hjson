@@ -50,6 +50,7 @@ category: turret
 research: sublimate
 drawer:{
  type: DrawTurret
+ basePrefix: reinforced-
  parts: [
 {
 type: RegionPart

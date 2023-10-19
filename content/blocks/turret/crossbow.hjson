@@ -28,6 +28,10 @@ objectives: [
     }
   ]
 }
+drawer:{
+ type: DrawTurret
+ basePrefix: reinforced-
+}
 requirements: [
  graphite/95
  silicon/170

@@ -27,6 +27,10 @@ ammoTypes:{
         buildingDamageMultiplier: 0.3
     }
 }
+drawer:{
+ type: DrawTurret
+ basePrefix: reinforced-
+}
 category: turret
 research: breach
 requirements: [

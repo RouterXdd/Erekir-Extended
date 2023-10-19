@@ -13,6 +13,47 @@ shootType:{
   buildingDamageMultiplier: 0.3
   hitColor: "0071e4"
 }
+shoot:{
+  firstShotDelay: 10
+}
+drawer:{
+ type: DrawTurret
+ basePrefix: reinforced-
+ parts: [
+{
+type: ShapePart
+progress: warmup
+mirror: false
+color: 2c8ced
+hollow: true
+layer: 110
+sides: 3
+stroke: 0
+strokeTo: 2
+radius: 3
+rotation: 90
+y: -9
+rotateSpeed: 0
+}
+{
+type: HaloPart
+progress: warmup
+color: 2c8ced
+hollow: false
+layer: 110
+shapes: 3
+haloRotateSpeed: 5
+haloRadius: 2
+radius: 5
+stroke: 0
+strokeTo: 1
+tri: true
+triLength: 0
+triLengthTo: 6
+y: -9
+}
+]
+}
 shootSound: laser
 shootWarmupSpeed: 1
 shootCone: 360

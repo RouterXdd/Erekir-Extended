@@ -34,6 +34,7 @@ category: turret
 research: ecription
 drawer:{
  type: DrawTurret
+ basePrefix: reinforced-
  parts: [
 {
 suffix: "-barrel"

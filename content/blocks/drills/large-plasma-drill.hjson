@@ -14,10 +14,10 @@ warmupSpeed: 0.01
 itemCapacity: 20
 liquidBoostIntensity: 1
 consumes: {
-  power: 0.35
+  power: 1.3
   liquid: {
       liquid: cyanogen
-    amount: 0.03
+    amount: 0.04
     booster: false
   }
 }

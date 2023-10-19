@@ -2,13 +2,13 @@ type: PowerTurret
 size: 5
 health: 13850
 consumes: {
-    power: 136
+    power: 180
 }
 shootType:{
     type: ContinuousFlameBulletType
     length: 674
-    lifetime: 35
-    damage: 1360
+    lifetime: 30
+    damage: 680
     pierceCap: 3
     colors: ["ffffff", "ffffff", "ffffff"]
     flareColor: ffffff
@@ -20,12 +20,13 @@ shootType:{
       height: 0
       damage: 0
       speed: 0
-spawnUnit: time-missile
+      spawnUnit: time-missile
     }
   
   }
 drawer:{
  type: DrawTurret
+ basePrefix: reinforced-
  parts: [
 {
 type: ShapePart
@@ -38,6 +39,7 @@ stroke: 3
 radius: 12
 rotateSpeed: 2.3
 y: 18
+layer: 110
 }
 {
 type: ShapePart
@@ -50,6 +52,7 @@ stroke: 3
 radius: 12
 rotateSpeed: -2.3
 y: 18
+layer: 110
 }
 {
 type: ShapePart
@@ -62,6 +65,7 @@ strokeTo: 5
 radius: 3
 rotateSpeed: 0
 y: 18
+layer: 110
 }
 {
 type: RegionPart
@@ -88,7 +92,7 @@ shootSound: laser
 shootWarmupSpeed: 0.4
 shootCone: 360
 rotateSpeed: 0.65
-reload: 6
+reload: 8
 outlineColor: "2a2c35"
 range: 674
 category: turret
@@ -102,12 +106,12 @@ objectives: [
   ]
 }
 requirements: [
-    beryllium/1670
-    graphite/1120
-  silicon/715
-  tungsten/630
-  oxide/730
-  phase-fabric/940
+  beryllium/2000
+  graphite/1530
+  silicon/1060
+  tungsten/830
+  oxide/710
   surge-alloy/795
-  carbide/872
+  carbide/672
+  phase-fabric/450
 ]
