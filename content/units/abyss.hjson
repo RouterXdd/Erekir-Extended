@@ -1,0 +1,85 @@
+type:flying
+flying:true
+template: ErekirUnitType
+health: 21210
+armor: 31
+speed: 1.9
+hitSize: 40
+drag: 0.22
+rotateSpeed: 4
+engineSize: 0
+weapons:[
+{
+mirror : true
+        reload : 80
+        name : shit
+        top: false
+        rotate: false
+        x : 0
+        y : 2
+        shoot: {
+type: ShootHelix
+shots: 4
+shotDelay: 8
+scl: 3.4
+}
+bullet: {
+type: BasicBulletType
+speed: 4
+lifetime: 30
+height: 20
+width: 20
+sprite: large-orb
+damage: 110
+backColor: 0a9489
+frontColor: 37e995
+}
+}
+{
+mirror : true
+        reload : 10
+        name : abyss-gun
+        top: true
+        rotate: true
+        rotateSpeed: 5
+        layerOffset: -1
+        shootY: 4
+        x : 15
+        y : 10
+bullet: {
+type: BasicBulletType
+speed: 6
+lifetime: 30
+height: 18
+width: 12
+pierceCap: 3
+pierce: true
+damage: 20
+backColor: 0a9489
+frontColor: 37e995
+}
+}
+]
+abilities : [
+{
+        teamColor : true
+        type : MoveEffectAbility
+        y : -7
+        x : 16
+}
+{
+        teamColor : true
+        type : MoveEffectAbility
+        y : -7
+        x : -16
+}
+{
+        teamColor : true
+        type : MoveEffectAbility
+        y : -13
+        x : 0
+}
+]
+research:{
+parent: glider-fabricator
+}

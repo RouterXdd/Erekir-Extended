@@ -1,12 +1,12 @@
 name: Large Rubidium wall
 type: wall
-health: 3400
+health: 2640
 size: 2
 armor: 12
 chanceDeflect: 15
 category: defense
 research: rubidium-wall
 requirements: [
-  tungsten/8
+  tungsten/12
   rubidium/16
 ]

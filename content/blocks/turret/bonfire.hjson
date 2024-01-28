@@ -9,10 +9,26 @@ liquidConsumed: 0.2
 outlineColor: "2a2c35"
 squareSprite: false
 shoot: {
+type: ShootMulti
+source: {
 type: ShootAlternate
-shots: 3
-barrels: 3
-spread: 10
+shots: 1
+spread: 0
+}
+dest: [
+{
+type: ShootBarrel
+barrels: [0, -11, 0]
+}
+{
+type: ShootBarrel
+barrels: [11, -14, 0]
+}
+{
+type: ShootBarrel
+barrels: [-11, -14, 0]
+}
+]
 }
 ammoTypes:{
   radon: {
@@ -40,16 +56,6 @@ drawer:{
  type: DrawTurret
  basePrefix: reinforced-
  parts: [
-{
-type: RegionPart
-suffix: -side
-mirror: true
-moveY: -1
-moveX: 4
-moveRot: 60
-x: 0
-y: 16
-}
 {
 type: ShapePart
 progress: warmup
@@ -100,6 +106,48 @@ triLength: 0
 triLengthTo: 18
 y: -14
 }
+{
+type: RegionPart
+suffix: -barrel
+mirror: false
+x: 0
+y: 7
+under: true
+moves: [
+{
+type: PartMove
+progress: warmup
+x: 0
+y: -3
+}]}
+{
+type: RegionPart
+suffix: -barrel
+mirror: false
+x: 11
+y: 5
+under: true
+moves: [
+{
+type: PartMove
+progress: warmup
+x: 0
+y: -3
+}]}
+{
+type: RegionPart
+suffix: -barrel
+mirror: false
+x: -11
+y: 5
+under: true
+moves: [
+{
+type: PartMove
+progress: warmup
+x: 0
+y: -3
+}]}
 ]   
 }
 category: turret

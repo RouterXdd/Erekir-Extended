@@ -1,9 +1,7 @@
 type: Reconstructor
-name: "Hug Refabricator"
 regionSuffix: "-dark"
 size: 3
 health: 750
-description: "Upgrades crawl units to T2"
 constructTime: 3875
 upgrades: [
   [way, path]

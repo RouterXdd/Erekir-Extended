@@ -29,7 +29,9 @@ drawer:{
     }
     {
      type: DrawRegion
-     suffix: -main
+    }
+    {
+     type: DrawLiquidOutputs
     }
   ]
 }

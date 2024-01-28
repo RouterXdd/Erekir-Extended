@@ -30,15 +30,14 @@ drawer: {
         }
         {
         type: DrawSpikes
-        
+        amount: 8
+        color: 0a9489
+        radius: 2
+        length: 4
+        rotateSpeed: 3
         }
         {
         type: DrawDefault
-        amount: 8
-        color: 0a9489
-        radius: 5
-        length: 4
-        rotateSpeed: 3
      }
   ]
   }

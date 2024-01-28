@@ -8,7 +8,7 @@ shootType:{
     type: ContinuousFlameBulletType
     length: 674
     lifetime: 30
-    damage: 680
+    damage: 590
     pierceCap: 3
     colors: ["ffffff", "ffffff", "ffffff"]
     flareColor: ffffff
@@ -68,20 +68,35 @@ y: 18
 layer: 110
 }
 {
+type: HaloPart
+progress: warmup
+color: 9fe2ff
+hollow: false
+layer: 110
+shapes: 6
+haloRotateSpeed: 8
+haloRadius: 5
+radius: 12
+stroke: 0
+strokeTo: 1.4
+tri: true
+triLength: 0
+triLengthTo: 17
+y: 18
+}
+{
 type: RegionPart
-suffix: -blade
-mirror: true
-moveRot: -45
-x: 4
-y: -6
+suffix: -battery
+mirror: false
+x: 0
+y: -5
 under: true
 moves: [
 {
 type: PartMove
-progress: reload
-x: 5
-y: -6
-rot: -70
+progress: recoil
+x: 0
+y: -12
 }
 ]
 }
@@ -93,7 +108,9 @@ shootWarmupSpeed: 0.4
 shootCone: 360
 rotateSpeed: 0.65
 reload: 8
+recoil: 2.5
 outlineColor: "2a2c35"
+outlineRadius: 4
 range: 674
 category: turret
 research: {

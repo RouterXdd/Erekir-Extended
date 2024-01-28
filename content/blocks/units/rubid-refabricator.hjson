@@ -1,9 +1,7 @@
 type: Reconstructor
-name: "Rubidium Refabricator"
 regionSuffix: "-dark"
 size: 3
 health: 550
-description: "Upgrades stell to rubidium type"
 constructTime: 3875
 upgrades: [
   [stell, rubid]

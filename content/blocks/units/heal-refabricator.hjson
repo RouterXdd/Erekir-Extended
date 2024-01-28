@@ -1,9 +1,7 @@
 type: Reconstructor
-name: "Heal Refabricator"
 regionSuffix: "-dark"
 size: 3
 health: 750
-description: "Upgrades Repair units to T2"
 constructTime: 3875
 upgrades: [
   [heal, regeneration]
