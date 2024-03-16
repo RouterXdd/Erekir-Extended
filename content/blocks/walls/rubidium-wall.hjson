@@ -1,7 +1,7 @@
 name: Rubidium wall
 type: wall
-health: 660
-armor: 12
+health: 580
+armor: 9
 chanceDeflect: 15
 category: defense
 research: tungsten-wall

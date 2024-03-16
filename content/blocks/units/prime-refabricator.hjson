@@ -2,5 +2,5 @@ upgrades: [
   [locus, precept]
   [cleroi, anthicus]
   [avert, obviate]
-  [rubid, input]
+  [t2-rubid, t3-input]
 ]

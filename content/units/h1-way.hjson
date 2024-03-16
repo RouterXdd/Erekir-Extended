@@ -1,4 +1,5 @@
 type: crawl
+template: ErekirUnitType
 health: 890
 flying: false
 range: 1
@@ -17,7 +18,4 @@ targetAir: false
 segmentScl:3
 segmentPhase: 3
 segmentMag: 0.5
-envEnabled: 17
-envDisabled: 0
-outlineColor: "2d2f39"
 research: hug-fabricator

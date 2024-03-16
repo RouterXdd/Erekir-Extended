@@ -8,7 +8,7 @@ power: 4.2
 }
 plans: [
   {
-    unit: heal
+    unit: r1-heal
     requirements: [
       silicon/60
       beryllium/75

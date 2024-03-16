@@ -4,7 +4,7 @@ size: 3
 health: 750
 constructTime: 3875
 upgrades: [
-  [heal, regeneration]
+  [r1-heal, r2-regeneration]
 ]
 consumes: {
 power: 3.8

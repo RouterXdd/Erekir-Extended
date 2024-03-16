@@ -9,7 +9,7 @@ power: 6
 }
 plans: [
   {
-    unit: slide
+    unit: g1-slide
     requirements: [
       silicon/45
       bperill/30

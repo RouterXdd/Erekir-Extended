@@ -4,7 +4,7 @@ size: 3
 health: 550
 constructTime: 3875
 upgrades: [
-  [stell, rubid]
+  [stell, t2-rubid]
 ]
 consumes: {
 power: 3.6

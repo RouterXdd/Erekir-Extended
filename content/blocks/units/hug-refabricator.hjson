@@ -4,7 +4,7 @@ size: 3
 health: 750
 constructTime: 3875
 upgrades: [
-  [way, path]
+  [h1-way, h2-path]
 ]
 consumes: {
 power: 3.8

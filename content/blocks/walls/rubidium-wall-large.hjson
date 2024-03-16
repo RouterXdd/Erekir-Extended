@@ -1,8 +1,8 @@
 name: Large Rubidium wall
 type: wall
-health: 2640
+health: 2320
 size: 2
-armor: 12
+armor: 9
 chanceDeflect: 15
 category: defense
 research: rubidium-wall

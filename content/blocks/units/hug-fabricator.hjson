@@ -13,7 +13,7 @@ liquid: {
 }
 plans: [
   {
-    unit: way
+    unit: h1-way
     requirements: [
       silicon/60
       beryllium/40

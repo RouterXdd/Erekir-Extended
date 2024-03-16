@@ -3,10 +3,10 @@ size: 3
 health: 760
 hasPower: true
 consumes: {
-  power: 3.6
+  power: 4
   liquid:{
     liquid: nitrogen
-    amount: 0.02
+    amount: 0.035
   }
 }
 pumpAmount: 0.35
