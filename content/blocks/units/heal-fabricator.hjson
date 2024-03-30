@@ -21,6 +21,7 @@ requirements: [
   graphite/200
   silicon/260
   beryllium/320
+  tungsten/140
 ]
 research: {
 parent: tank-fabricator

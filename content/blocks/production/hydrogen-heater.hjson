@@ -27,6 +27,6 @@ category: crafting
 research: electric-heater
 requirements: [
     graphite/35
-    tungsten/20
+    oxide/20
     beryllium/50
 ]

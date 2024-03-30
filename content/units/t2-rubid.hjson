@@ -22,11 +22,9 @@ treadRects: [
   height: 78
   }
 ]
+template: TankUnitType
 treadPullOffset: 4
 treadFrames: 28
-envEnabled: 17
-envDisabled: 0
-outlineColor: "2d2f39"
 weapons: [
  {
     name: rubid-weapon
@@ -44,7 +42,7 @@ spread: 7
     bullet: {
       type: BasicBulletType
       sprite: missile-large
-      damage: 30
+      damage: 15
       speed: 8
       lifetime: 10
       recoil: 0.1

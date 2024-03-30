@@ -2,7 +2,6 @@ type: itemTurret
 name: "Blaster"
 description: "Shoot the strong stun bullet"
 health: 1910
-shots: 1
 size: 3
 reload: 170
 range: 280

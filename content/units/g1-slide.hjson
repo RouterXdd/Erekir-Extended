@@ -2,7 +2,7 @@ type:flying
 flying:true
 template: ErekirUnitType
 health: 460
-armor: 5
+armor: 2
 speed: 2.2
 drag: 0.12
 name:"Slide"
@@ -22,7 +22,7 @@ length: 16
 lifetime: 60
 width: 6
 serrations: 0
-damage: 50
+damage: 30
 hitSound: shootBig
 fromColor: 0a9489
 toColor: 37e995

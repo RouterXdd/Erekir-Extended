@@ -24,5 +24,6 @@ research: hug-fabricator
 requirements: [
   beryllium/340
   silicon/230
+  oxide/135
   tungsten/75
 ]

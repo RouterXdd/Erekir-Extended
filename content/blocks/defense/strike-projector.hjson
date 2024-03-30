@@ -51,7 +51,6 @@ shootEffect:{
 }
 shootType: {
   type: EmpBulletType
-  scaleVelocity: true
   splashDamage: 100
   splashDamageRadius: 40
   damage: 0

@@ -68,4 +68,5 @@ requirements: [
   silicon/315
   tungsten/230
   oxide/95
+  toxide/60
 ]

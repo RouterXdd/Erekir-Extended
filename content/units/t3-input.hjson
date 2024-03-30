@@ -16,11 +16,9 @@ treadRects: [
   height: 96
   }
 ]
+template: TankUnitType
 treadPullOffset: 4
 treadFrames: 120
-envEnabled: 17
-envDisabled: 0
-outlineColor: "2d2f39"
 weapons: [
  {
     name: input-weapon
@@ -32,7 +30,6 @@ weapons: [
     shootSound: cannon
     rotateSpeed: 3
     reload: 40
-    outlineColor: "2d2f39"
     shoot: {
 type: ShootSpread
 shots: 3
@@ -47,6 +44,8 @@ spread: 10
       recoil: 0.1
       width: 8
       height: 11
+      pierceCap: 2
+      pierceBuilding: true
       trailWidth: 2
       trailLength: 4
       shootEffect: shootBig
@@ -74,4 +73,4 @@ spread: 10
     }
   }
 ]
-research: prime-refabricator
+research: toxity-refabricator

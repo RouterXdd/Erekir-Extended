@@ -2,7 +2,7 @@ type:flying
 flying:true
 template: ErekirUnitType
 health: 890
-armor: 9
+armor: 5
 speed: 1.9
 hitSize: 12
 drag: 0.14
@@ -27,7 +27,7 @@ speed: 6
 lifetime: 5
 height: 9
 width: 6
-damage: 15
+damage: 10
 }
 }
 ]

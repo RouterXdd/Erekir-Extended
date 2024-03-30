@@ -5,7 +5,7 @@ range: 150
 health: 1635
 rotateSpeed: 1.65
 shootSound: laser
-shootShake: 1.1
+shake: 0.7
 liquidConsumed: 0.2
 outlineColor: "2a2c35"
 squareSprite: false

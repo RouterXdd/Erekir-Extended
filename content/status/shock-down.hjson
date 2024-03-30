@@ -1,0 +1,21 @@
+    reloadMultiplier : 0.6
+    speedMultiplier : 0.75
+    color : ee687e
+    
+    effect : {
+        
+        type : MultiEffect
+        
+        effects : [
+            {
+                particles : 5
+                colorFrom : ee687e
+                sizeFrom : 2
+                lifetime : 20
+                colorTo : 971b6d
+                sizeTo : 0
+                length : 3
+                type : ParticleEffect
+                cone : 360
+            }]
+        }

@@ -5,7 +5,7 @@ flying: false
 range: 1
 speed: 1.15
 armor: 3
-hitsize: 8
+hitSize: 8
 omniMovement: false
 rotateSpeed: 2.6
 drownTimeMultiplier: 1.2

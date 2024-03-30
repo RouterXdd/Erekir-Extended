@@ -30,6 +30,8 @@ objectives: [
   ]
 }
 requirements: [
-  rubidium/180
+  rubidium/190
+  oxide/145
+  tungsten/170
   silicon/270
 ]

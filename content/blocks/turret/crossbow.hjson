@@ -13,9 +13,27 @@ ammoTypes:{
         lifetime: 48
         damage: 55
         knockback: 36
-        width: 6
-        height: 14
+        width: 7
+        height: 15
         sprite: erek-bolt
+        frontColor: e1c6c1
+        backColor: 976d73
+        buildingDamageMultiplier: 0.3
+    }
+    toxide:{
+        speed: 6
+        lifetime: 31.6666
+        damage: 60
+        knockback: 45
+        width: 7
+        height: 15
+        pierce: true
+        sprite: erek-bolt
+        frontColor: ee687e
+        backColor: cb3874
+        buildingDamageMultiplier: 0.3
+        status: shock-down
+        statusDuration: 140
     }
 }
 category: turret
@@ -36,4 +54,5 @@ requirements: [
  graphite/95
  silicon/170
  rubidium/110
+ toxide/60
 ]

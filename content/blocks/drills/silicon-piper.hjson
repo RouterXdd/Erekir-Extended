@@ -5,7 +5,7 @@ health: 275
 size: 2
 drillTime: 90
 attribute: water
-fogradius: 2
+fogRadius: 3
 rotateSpeed: 0
 envEnabled: -1
 envDisabled: 4

@@ -4,7 +4,7 @@ range: 240
 health: 12600
 rotateSpeed: 1.65
 shootSound: torch
-shootShake: 1.1
+shake: 1.1
 liquidConsumed: 0.2
 outlineColor: "2a2c35"
 squareSprite: false
@@ -168,4 +168,5 @@ requirements: [
   oxide/530
   carbide/370
   bperill/326
+  toxide/275
 ]

@@ -22,5 +22,5 @@ category: crafting
 research: heat-redirector
 requirements:[
     graphite/14
-    oxide/6
+    toxide/6
 ]

@@ -8,15 +8,18 @@ craftEffect: {
   type: ParticleEffect
   lifetime: 30
   length: 9
-  colorTo: ea8878
+  colorTo: ee687e
 }
 consumes: {
   power: 2.5
   items: {
     items: [
-      tungsten/6
-      graphite/6
+      tungsten/4
     ]
+  }
+  liquid: {
+    liquid: water
+    amount: 0.133
   }
 }
 drawer: [
@@ -27,12 +30,12 @@ drawer: [
     type: DrawGlowRegion
     suffix: -glow
     alpha: 2
-    color: e65555
+    color: cb4b7f
   }
 ]
-heatRequirement: 6
-craftTime: 500
-outputItem: carbide/1
+heatRequirement: 4
+craftTime: 300
+outputItem: toxide/1
 category: crafting
 research: electric-heater
 requirements: [

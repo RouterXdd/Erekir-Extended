@@ -4,7 +4,7 @@ flying: false
 range: 140
 speed: 1.3
 armor: 5
-hitsize: 14
+hitSize: 14
 omniMovement: false
 rotateSpeed: 2.6
 drownTimeMultiplier: 1.2
@@ -16,9 +16,7 @@ controller: HugAI
 segmentScl:3
 segmentPhase: 3
 segmentMag: 0.5
-envEnabled: 17
-envDisabled: 0
-outlineColor: "2d2f39"
+template: ErekirUnitType
 research: hug-refabricator
 weapons: [
  {

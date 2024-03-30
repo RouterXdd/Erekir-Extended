@@ -18,7 +18,7 @@ armor: 2
 hitSize: 11
 fogRadius: 4
 engineSize: 3.6
-engineOffest: 5
+engineOffset: 5
 engineColor: 84f491
 envEnabled: 17
 envDisabled: 0
@@ -47,7 +47,6 @@ y: 9
 rotate: false
 shootY: 0
 beamWidth: 0.84
-aimDst: 0
 shootCone: 15
 mirror: false
 repairSpeed: 1.95
@@ -73,7 +72,6 @@ y: 9
 rotate: false
 shootY: 0
 beamWidth: 0.84
-aimDst: 0
 shootCone: 15
 mirror: false
 repairSpeed: 1.95

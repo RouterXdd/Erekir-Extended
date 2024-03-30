@@ -1,0 +1,31 @@
+type: Reconstructor
+regionSuffix: "-dark"
+size: 5
+health: 1200
+constructTime: 4000
+upgrades: [
+  [t2-rubid, t3-input]
+]
+consumes: {
+power: 6
+liquid:{
+    liquid: nitrogen
+    amount: 0.25
+}
+items:{
+  items: [
+  thorium/80
+  silicon/85
+  toxide/30
+  ]
+}
+}
+category: units
+research: prime-refabricator
+requirements: [
+  thorium/300
+  oxide/220
+  tungsten/180
+  silicon/430
+  toxide/95
+]
