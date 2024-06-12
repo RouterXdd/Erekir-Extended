@@ -3,7 +3,7 @@ type: DirectionalForceProjector
 size: 3
 width: 42
 length: 54
-shieldHealth: 3200
+shieldHealth: 6500
 cooldownNormal: 0.25
 cooldownBrokenBase: 0.35
 consumes: {
@@ -12,7 +12,8 @@ consumes: {
 category: effect
 research: beryllium-reactor
 requirements: [
-  graphite/ 125
+  oxide/95
+  graphite/125
   tungsten/165
   silicon/210
 ]

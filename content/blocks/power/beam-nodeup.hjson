@@ -7,7 +7,7 @@ fogRadius: 1
 consumesPower: true
 outputsPower: true
 consumes: {
-    powerBuffered: 3000
+    powerBuffered: 5000
     }
 requirements: [
     beryllium/6

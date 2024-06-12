@@ -11,7 +11,7 @@ ammoTypes:{
     beryllium:{
         speed: 5
         lifetime: 40
-        damage: 25
+        damage: 18
         width: 8
         height: 10
         ammoMultiplier: 2
@@ -20,7 +20,7 @@ ammoTypes:{
     silicon:{
         speed: 5
         lifetime: 40
-        damage: 38
+        damage: 30
         width: 8
         height: 10
         ammoMultiplier: 3

@@ -11,7 +11,7 @@ ammoTypes:{
     rubidium:{
         speed: 5
         lifetime: 48
-        damage: 55
+        damage: 40
         knockback: 36
         width: 7
         height: 15
@@ -23,7 +23,7 @@ ammoTypes:{
     toxide:{
         speed: 6
         lifetime: 31.6666
-        damage: 60
+        damage: 50
         knockback: 45
         width: 7
         height: 15

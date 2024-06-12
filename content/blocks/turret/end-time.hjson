@@ -8,7 +8,7 @@ shootType:{
     type: ContinuousFlameBulletType
     length: 674
     lifetime: 30
-    damage: 590
+    damage: 500
     pierceCap: 3
     colors: ["ffffff", "ffffff", "ffffff"]
     flareColor: ffffff

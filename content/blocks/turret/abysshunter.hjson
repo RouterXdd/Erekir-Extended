@@ -2,7 +2,7 @@ type: ContinuousTurret
 size: 3
 health: 2760
 consumes: {
-    power: 6.1
+    power: 8
 }
 shootType:{
     type: ContinuousFlameBulletType
