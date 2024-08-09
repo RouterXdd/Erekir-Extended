@@ -6,7 +6,7 @@ hasLiquids: true
 consumes:{
     liquid: {
         liquid: hydrogen
-        amount: 0.015
+        amount: 0.0166666666
     }
 }
 rotateDraw: false

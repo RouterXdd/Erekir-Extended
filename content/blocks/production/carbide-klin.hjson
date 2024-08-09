@@ -19,7 +19,7 @@ consumes: {
   }
   liquid: {
     liquid: water
-    amount: 0.133
+    amount: 0.133333333
   }
 }
 drawer: [

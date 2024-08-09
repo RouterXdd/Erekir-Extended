@@ -28,5 +28,6 @@ research: {
     }
 requirements: [
     beryllium/20
+    silicon/45
     graphite/65
 ]
