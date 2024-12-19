@@ -1,9 +1,0 @@
-research: smite
-requirements: [
-    carbide/400
-    beryllium/2000
-    silicon/800
-    graphite/800
-    phase-fabric/220
-    bperill/300
-]

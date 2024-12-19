@@ -1,8 +1,0 @@
-color: "#ba9191"
-radioactivity: 0.0
-explosiveness: 1.0
-flammability: 1.5
-hardness: 3
-research: {
-parent: tungsten
-}
