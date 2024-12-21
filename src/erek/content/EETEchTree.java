@@ -84,7 +84,7 @@ public class EETEchTree {
                 });
             });
             node(toxideKiln, () ->{
-                node(ozoneHeater, () ->{
+                node(bperillExtractor, () ->{
                 });
             });
         });

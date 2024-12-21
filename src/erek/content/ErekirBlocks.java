@@ -349,12 +349,12 @@ public class ErekirBlocks {
             squareSprite = false;
         }};
         tungstenBarrier = new DirectShieldProjector("tungsten-barrier"){{
-            requirements(Category.effect, with(graphite, 125, tungsten, 165, beryllium, 210));
+            requirements(Category.effect, with(graphite, 125, tungsten, 165, beryllium, 210, oxide, 90));
             size = 3;
             width = 45;
             length = 55;
-            shieldHealth = 2000;
-            cooldownNormal = 1.25f;
+            shieldHealth = 1600;
+            cooldownNormal = 1f;
             cooldownBrokenBase = 0.6f;
             consumePower(3.5f);
         }};

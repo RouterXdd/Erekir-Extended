@@ -1,15 +1,16 @@
 package erek.content;
 
+import arc.audio.Sound;
 import arc.graphics.Color;
 import arc.math.geom.Rect;
 import mindustry.ai.UnitCommand;
 import mindustry.ai.types.BuilderAI;
 import mindustry.content.Fx;
 import mindustry.entities.bullet.*;
+import mindustry.entities.part.HoverPart;
+import mindustry.entities.part.RegionPart;
 import mindustry.entities.pattern.ShootSpread;
-import mindustry.gen.PayloadUnit;
-import mindustry.gen.TankUnit;
-import mindustry.gen.UnitEntity;
+import mindustry.gen.*;
 import mindustry.graphics.Pal;
 import mindustry.type.UnitType;
 import mindustry.type.Weapon;
@@ -32,7 +33,7 @@ public class ErekirUnitTypes {
     //core units
     realise, encounter, cooperative,
     //sectoring
-    reroll, phoenix
+    reroll, rupturer, phoenix
     ;
 
     public static void load() {
@@ -190,6 +191,86 @@ public class ErekirUnitTypes {
 
                 bullet = new BulletType(){{
                     maxRange = 70f;
+                }};
+            }});
+        }};
+        rupturer = new TankUnitType("rupturer"){{
+            hovering = true;
+            shadowElevation = 0.15f;
+            drag = 0.1f;
+            hitSize = 26f;
+            treadPullOffset = 3;
+            speed = 0.45f;
+            rotateSpeed = 2.2f;
+            health = 12000;
+            armor = 18f;
+            fogRadius = 100f * 3f / 8f;
+            itemCapacity = 0;
+            treadRects = new Rect[]{new Rect(24 - 96f / 2, 13 - 96f / 2, 17, 72)};
+            researchCostMultiplier = 0.4f;
+            constructor = ElevationMoveUnit::create;
+
+            for(float f : new float[]{-13f, 13f}){
+                parts.add(new HoverPart(){{
+                    x = 10f;
+                    y = f;
+                    mirror = true;
+                    radius = 14f;
+                    phase = 70f;
+                    stroke = 3.5f;
+                    sides = 6;
+                    layerOffset = -0.001f;
+                    color = Color.valueOf("8f3a9c");
+                }});
+            }
+
+            weapons.add(new Weapon("erek-rupturer-weapon"){{
+                layerOffset = 1f;
+                reload = 240f;
+                shootY = 19.5f;
+                recoil = 3f;
+                rotate = true;
+                rotateSpeed = 1.5f;
+                mirror = false;
+                x = 0f;
+                y = -5f;
+                inaccuracy = 0f;
+                shootSound = Sounds.largeCannon;
+                heatColor = Color.valueOf("f9350f");
+                cooldownTime = 150f;
+                parts.addAll(
+                        new RegionPart("-barrel"){{
+                            mirror = false;
+                            under = true;
+                            recoilIndex = 2;
+                            cooldownTime = 50;
+                            heatProgress = PartProgress.recoil;
+                            progress = PartProgress.recoil;
+                            moveY = -3f;
+                        }});
+
+                bullet = new ArtilleryBulletType(3f, 200, "shell"){{
+                    hitEffect = Fx.blastExplosion;
+                    knockback = 0.8f;
+                    lifetime = 200f;
+                    width = height = 20f;
+                    splashDamageRadius = 60f;
+                    splashDamage = 300f;
+                    hitColor = backColor = trailColor = Color.valueOf("8f3a9c");
+                    frontColor = Color.white;
+                    trailWidth = 5.5f;
+                    trailLength = 35;
+                    trailEffect = Fx.none;
+
+                    intervalBullet = new ExplosionBulletType(80, 40){{
+                        killShooter = false;
+                    }};
+
+                    bulletInterval = 25f;
+                    intervalRandomSpread = 20f;
+                    intervalBullets = 1;
+                    intervalAngle = 180f;
+                    intervalSpread = 300f;
                 }};
             }});
         }};
