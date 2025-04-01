@@ -100,7 +100,7 @@ public class EETEchTree {
         });
         vanillaNode(plasmaBore, () ->{
             node(plasmaDrill, () ->{
-                node(largePlasmaDrill, () ->{
+                node(plasmaQuarry, () ->{
 
                 });
             });
@@ -123,6 +123,10 @@ public class EETEchTree {
                     node(bonfire, Seq.with(new SectorComplete(karst)), () ->{
                     });
                 });
+            });
+        });
+        vanillaNode(scathe, () ->{
+            node(timeLauncher, () ->{
             });
         });
     }

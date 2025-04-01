@@ -33,7 +33,7 @@ public class ErekirUnitTypes {
     //core units
     realise, encounter, cooperative,
     //sectoring
-    reroll, rupturer, phoenix
+    reroll, prevent, rupturer, phoenix
     ;
 
     public static void load() {
@@ -131,6 +131,80 @@ public class ErekirUnitTypes {
                 }};
             }});
         }};
+        slide = new ErekirUnitType("g1-slide"){{
+            speed = 2.1f;
+            drag = 0.12f;
+            flying = true;
+            health = 390;
+            armor = 2.75f;
+            engineSize = 0f;
+            hitSize = 11;
+            constructor = UnitEntity::create;
+                parts.add(new HoverPart(){{
+                    x = 0f;
+                    y = 0;
+                    mirror = false;
+                    radius = 8f;
+                    phase = 50f;
+                    stroke = 2f;
+                    sides = 4;
+                    layerOffset = -0.001f;
+                    color = Color.valueOf("37e995");
+                }});
+
+            weapons.add(new Weapon(){{
+                y = 3f;
+                x = 0f;
+                reload = 24f;
+                ejectEffect = Fx.none;
+                mirror = false;
+                bullet = new ShrapnelBulletType(){{
+                    length = 24;
+                    damage = 30f;
+                    lifetime = 20;
+                    width = 7f;
+                    toColor = Color.valueOf("37e995");
+                }};
+                shootSound = Sounds.shootSnap;
+            }});
+        }};
+        fall = new ErekirUnitType("g2-fall"){{
+            speed = 1.85f;
+            drag = 0.14f;
+            flying = true;
+            health = 890;
+            engineSize = 0f;
+            hitSize = 15;
+            armor = 5.85f;
+            constructor = UnitEntity::create;
+            parts.add(new HoverPart(){{
+                x = 0f;
+                y = 0;
+                mirror = false;
+                radius = 15f;
+                phase = 45f;
+                stroke = 2.5f;
+                sides = 4;
+                layerOffset = -0.001f;
+                color = Color.valueOf("37e995");
+            }});
+
+            weapons.add(new Weapon(){{
+                y = 3f;
+                x = 0f;
+                reload = 24f;
+                ejectEffect = Fx.none;
+                mirror = false;
+                bullet = new ShrapnelBulletType(){{
+                    length = 24;
+                    damage = 30f;
+                    lifetime = 20;
+                    width = 7f;
+                    toColor = Color.valueOf("37e995");
+                }};
+                shootSound = Sounds.shootSnap;
+            }});
+        }};
         realise = new ErekirUnitType("realise"){{
             coreUnitDock = true;
             controller = u -> new BuilderAI(true, 600);
@@ -192,6 +266,51 @@ public class ErekirUnitTypes {
                 bullet = new BulletType(){{
                     maxRange = 70f;
                 }};
+            }});
+        }};
+        prevent = new ErekirUnitType("prevent"){{
+            speed = 2.5f;
+            drag = 0.1f;
+            accel = 0.3f;
+            flying = true;
+            drawCell = false;
+            health = 8750;
+            armor = 4;
+            engineSize = 0f;
+            hitSize = 24;
+            constructor = UnitEntity::create;
+            setEnginesMirror(
+                    new UnitEngine(15.25f, -2.25f, 4f, -45),
+                    new UnitEngine(12.5f, -9.75f, 4f, -45)
+            );
+
+            weapons.add(new Weapon(){{
+                y = 0f;
+                x = 0f;
+                reload = 110f;
+                ejectEffect = Fx.none;
+                mirror = rotate = false;
+                shoot = new ShootSpread(3, 10);
+                bullet = new MissileBulletType(5.5f, 240){{
+                    smokeEffect = Fx.shootBigSmoke;
+                    shootEffect = Fx.shootBigColor;
+                    drag = 0.02f;
+                    width = 6f;
+                    height = 10f;
+                    lifetime = 75f;
+                    hitSize = 4f;
+                    hitColor = backColor = trailColor = Color.valueOf("c1dc53");
+                    frontColor = Color.white;
+                    homingPower = 0.3f;
+                    homingDelay = 14;
+                    trailRotation = true;
+                    trailChance = 0.55f;
+                    trailEffect = Fx.disperseTrail;
+                    trailWidth = 1.3f;
+                    trailLength = 8;
+                    despawnEffect = hitEffect = Fx.hitBulletColor;
+                }};
+                shootSound = Sounds.missile;
             }});
         }};
         rupturer = new TankUnitType("rupturer"){{

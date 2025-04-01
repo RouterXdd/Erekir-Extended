@@ -19,6 +19,7 @@ import mindustry.game.Team;
 import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
+import mindustry.type.unit.MissileUnitType;
 import mindustry.world.*;
 import mindustry.content.*;
 import mindustry.world.blocks.campaign.LaunchPad;
@@ -28,6 +29,7 @@ import mindustry.world.blocks.heat.*;
 import mindustry.world.blocks.payloads.Constructor;
 import mindustry.world.blocks.power.*;
 import mindustry.world.blocks.storage.*;
+import mindustry.world.blocks.units.UnitFactory;
 import mindustry.world.consumers.*;
 import mindustry.world.draw.*;
 import mindustry.world.blocks.production.*;
@@ -49,11 +51,11 @@ import static mindustry.type.ItemStack.*;
 public class ErekirBlocks {
     public static Block
             //environment
-            metalVent, pipe, rubidiumWallOre, bperillWallOre, staticF,
+            metalVent, pipe, rubidiumWallOre, bperillWallOre, staticFloor, staticWall,
             //crafting
             toxideKiln, replacer, neoplasmFurnace, bperillExtractor, hydrogenHeater, ozoneHeater, smallRedirector,
             //production
-            plasmaDrill, largePlasmaDrill, siliconPiper,
+            plasmaDrill, plasmaQuarry, siliconPiper,
             //defence
             strikeProjector, tungstenBarrier, rubidiumWall, rubidiumWallLarge, bperillWall, bperillWallLarge,
             //power
@@ -65,7 +67,9 @@ public class ErekirBlocks {
             //liquid
             heatPump,
             //turrets
-            ecription, blaster, crossbow, peweless, abyssHunter, conclusion, timeLauncher, endTime, bonfire
+            ecription, blaster, crossbow, peweless, abyssHunter, conclusion, timeLauncher, endTime, bonfire,
+            //units
+            rubidiumRefabricator, hugFabricator, gliderFabricator, toxityRefabricator
     ;
     public static void load(){
         //environment
@@ -91,7 +95,7 @@ public class ErekirBlocks {
             variants = 2;
             itemDrop = ErekirItems.bperill;
         }};
-        staticF = new Floor("static");
+        staticFloor = new Floor("static");
         toxideKiln = new HeatCrafter("carbide-klin"){{
             requirements(Category.crafting, with(Items.silicon, 100, Items.graphite, 80, Items.tungsten, 80, Items.oxide, 80));
 
@@ -131,8 +135,9 @@ public class ErekirBlocks {
             craftTime = 220f;
             rotate = true;
             invertFlip = true;
+            hasItems = true;
             group = BlockGroup.liquids;
-            itemCapacity = 0;
+            itemCapacity = 10;
 
             liquidCapacity = 20f;
 
@@ -253,20 +258,22 @@ public class ErekirBlocks {
 
             consumeLiquid(hydrogen, 0.5f / 60f).boost();
         }};
-        largePlasmaDrill = new BeamDrill("large-plasma-drill"){{
-            requirements(Category.production, with(graphite, 75,silicon, 120, carbide, 40, beryllium, 155, tungsten, 170));
-            consumePower(1f);
-            drillTime = 80f;
+        plasmaQuarry = new BeamDrill("plasma-quarry"){{
+            requirements(Category.production, with(beryllium, 280, surgeAlloy, 130, silicon, 210, carbide, 140, oxide, 170, toxide, 95));
+            consumePower(6.5f);
+            drillTime = 30f;
+            sparkColor = Pal.accent;
+            boostHeatColor = Pal.accent.mul(0.7f);
 
             tier = 5;
-            size = 3;
-            range = 6;
-            fogRadius = 4;
-            laserWidth = 0.9f;
-            itemCapacity = 20;
+            size = 5;
+            range = 8;
+            fogRadius = 5;
+            laserWidth = 1.2f;
+            itemCapacity = 30;
+            optionalBoostIntensity = 1;
 
-            consumeLiquid(hydrogen, 0.75f / 60f);
-            consumeLiquid(cyanogen, 3f / 60f).boost();
+            consumeLiquid(cyanogen, 4.5f / 60f);
         }};
         siliconPiper = new WallCrafter("silicon-piper"){{
             requirements(Category.production, with(graphite, 65, silicon, 45, beryllium, 20));
@@ -428,7 +435,7 @@ public class ErekirBlocks {
             ambientSoundVolume = 0.06f;
         }};
         coreStation = new UpgradeCore("core-station"){{
-            requirements(Category.effect, with(graphite, 1400, silicon, 1200, beryllium, 1100, tungsten, 780));
+            requirements(Category.effect, with(graphite, 1400, silicon, 1200, tungsten, 780, oxide, 460));
 
             isFirstTier = true;
             squareSprite = false;
@@ -862,6 +869,105 @@ public class ErekirBlocks {
             coolantMultiplier = 1.8f;
             squareSprite = false;
         }};
+        timeLauncher = new PowerTurret("time-launcher"){{
+            requirements(Category.turret, with(graphite, 460, silicon, 370, oxide, 190, carbide, 210, thorium, 355));
+
+            shootType = new BulletType(){{
+                shootEffect = Fx.shootBig;
+                smokeEffect = Fx.shootBigSmoke2;
+                shake = 1f;
+                speed = 0f;
+                keepVelocity = false;
+                collidesAir = false;
+
+                spawnUnit = new MissileUnitType("time-swarmil"){{
+                    speed = 4.5f;
+                    maxRange = 6f;
+                    lifetime = 60f * 2.2f;
+                    outlineColor = Pal.darkOutline;
+                    engineColor = trailColor = ErekirPal.timeLight;
+                    engineLayer = Layer.effect;
+                    health = 50;
+                    loopSoundVolume = 0.1f;
+
+                    weapons.add(new Weapon(){{
+                        shootCone = 360f;
+                        mirror = false;
+                        reload = 1f;
+                        shootOnDeath = true;
+                        bullet = new ExplosionBulletType(85f, 15f){{
+                            shootEffect = Fx.massiveExplosion;
+                        }};
+                    }});
+                }};
+            }};
+
+            reload = 330f;
+            shootY = 0;
+            shootSound = Sounds.laser;
+
+            drawer = new DrawTurret(){{
+                parts.add(new ShapePart(){{
+                    progress = PartProgress.warmup.delay(0.5f);
+                    color = ErekirPal.timeLight;
+                    circle = false;
+                    hollow = true;
+                    sides = 3;
+                    stroke = 0f;
+                    strokeTo = 3f;
+                    radius = 22f;
+                    layer = Layer.effect;
+                    rotateSpeed = 2;
+                }},new ShapePart(){{
+                    progress = PartProgress.warmup.delay(0.5f);
+                    color = ErekirPal.timeMid;
+                    circle = false;
+                    hollow = true;
+                    sides = 3;
+                    stroke = 0f;
+                    strokeTo = 3f;
+                    radius = 22f;
+                    layer = Layer.effect;
+                    rotateSpeed = -2;
+                }});
+            }};
+
+            shoot = new ShootSpread(){{
+                spread = 15f;
+                shots = 24;
+            }};
+            smokeEffect = new MultiEffect(
+                    new Effect(75f, 120f, e -> {
+                        color(ErekirPal.timeMid);
+                        stroke(e.fout() * 2f);
+
+                        color(ErekirPal.timeMid);
+                        for(int i = 0; i < 8; i++){
+                            Drawf.tri(e.x, e.y, 6f, 100f * e.fout(), i*45);
+
+                        }
+                        color();
+                        for(int i = 0; i < 8; i++) {
+                            Drawf.tri(e.x, e.y, 3f, 35f * e.fout(), i * 45);
+                        }
+                    })
+            );
+            inaccuracy = 0f;
+
+            shootWarmupSpeed = 0.4f;
+            rotateSpeed = 0;
+            shootCone = 360;
+
+            outlineColor = Pal.darkOutline;
+
+            scaledHealth = 310;
+            range = 500f;
+            size = 4;
+            consumePower(14);
+
+            coolant = consume(new ConsumeLiquid(arkycite, 40f / 60f));
+            coolantMultiplier = 1.5f;
+        }};
         bonfire = new ContinuousLiquidTurret("bonfire"){{
             requirements(Category.turret, with(beryllium, 1820, graphite, 1420, silicon, 940, tungsten, 760, oxide, 530, carbide, 370, bperill, 326, toxide, 275));
 
@@ -875,7 +981,7 @@ public class ErekirBlocks {
                             progress = PartProgress.warmup;
                             mirror = false;
                             x = 0;
-                            y = 7.5f;
+                            y = 8f;
                             moveX = 0f;
                             moveY = -3f;
                             under = true;
@@ -1011,6 +1117,16 @@ public class ErekirBlocks {
             armor = 6;
             size = 5;
             squareSprite = false;
+        }};
+        gliderFabricator = new UnitFactory("glider-fabricator"){{
+            requirements(Category.units, with(Items.silicon, 260, Items.graphite, 200, oxide, 150, bperill, 120));
+            size = 3;
+            configurable = false;
+            plans.add(new UnitPlan(slide, 60f * 50f, with(bperill, 30, Items.silicon, 50)));
+            regionSuffix = "-dark";
+            fogRadius = 3;
+            researchCostMultiplier = 0.7f;
+            consumePower(4.5f);
         }};
     }
 }
