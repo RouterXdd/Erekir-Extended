@@ -10,8 +10,6 @@ import mindustry.ui.dialogs.*;
 public class ErekirExtended extends Mod{
 
     public ErekirExtended(){
-        Log.info("Loaded ExampleJavaMod constructor.");
-
         //listen for game load event
         Events.on(ClientLoadEvent.class, e -> {
         });
@@ -19,12 +17,12 @@ public class ErekirExtended extends Mod{
 
     @Override
     public void loadContent(){
-        Log.info("Erekir moment");
         ErekirAttributes.load();
         ErekirStatusEffects.load();
         ErekirItems.load();
         ErekirUnitTypes.load();
         ErekirBlocks.load();
+        ErekirSectors.load();
         EETEchTree.load();
     }
 

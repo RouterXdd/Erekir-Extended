@@ -445,7 +445,6 @@ public class ErekirBlocks {
             size = 4;
             thrusterLength = 34/4f;
             armor = 7f;
-            alwaysUnlocked = true;
             incinerateNonBuildable = true;
             requiresCoreZone = false;
 
@@ -895,7 +894,7 @@ public class ErekirBlocks {
                         mirror = false;
                         reload = 1f;
                         shootOnDeath = true;
-                        bullet = new ExplosionBulletType(85f, 15f){{
+                        bullet = new ExplosionBulletType(70f, 15f){{
                             shootEffect = Fx.massiveExplosion;
                         }};
                     }});
@@ -965,7 +964,7 @@ public class ErekirBlocks {
             size = 4;
             consumePower(14);
 
-            coolant = consume(new ConsumeLiquid(arkycite, 40f / 60f));
+            coolant = consume(new ConsumeLiquid(arkycite, 80f / 60f));
             coolantMultiplier = 1.5f;
         }};
         bonfire = new ContinuousLiquidTurret("bonfire"){{

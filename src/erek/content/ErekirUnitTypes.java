@@ -32,7 +32,7 @@ public class ErekirUnitTypes {
     slide, fall, pit, depth, abyss,
     //core units
     realise, encounter, cooperative,
-    //sectoring
+    //sector
     reroll, prevent, rupturer, phoenix
     ;
 
@@ -190,19 +190,29 @@ public class ErekirUnitTypes {
             }});
 
             weapons.add(new Weapon(){{
-                y = 3f;
+                y = 0f;
                 x = 0f;
-                reload = 24f;
+                reload = 32f;
+                shootCone = 360;
+                baseRotation = 180;
                 ejectEffect = Fx.none;
                 mirror = false;
-                bullet = new ShrapnelBulletType(){{
-                    length = 24;
-                    damage = 30f;
-                    lifetime = 20;
-                    width = 7f;
-                    toColor = Color.valueOf("37e995");
+                bullet = new BasicBulletType(){{
+                    damage = 50f;
+                    lifetime = 55;
+                    speed = 5;
+                    height = 13f;
+                    width = 5.5f;
+                    frontColor = Color.valueOf("37e995");
+                    backColor = trailColor = Color.valueOf("0a9489");
+                    trailWidth = 2;
+                    trailLength = 9;
+                    homingDelay = 2;
+                    homingPower = 0.25f;
+                    pierceCap = 2;
+                    pierceBuilding = true;
                 }};
-                shootSound = Sounds.shootSnap;
+                shootSound = Sounds.blaster;
             }});
         }};
         realise = new ErekirUnitType("realise"){{

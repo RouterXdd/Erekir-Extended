@@ -7,6 +7,7 @@ import mindustry.ctype.*;
 import mindustry.game.*;
 import mindustry.type.*;
 
+import static erek.content.ErekirSectors.*;
 import static mindustry.content.Blocks.*;
 import static mindustry.content.Items.*;
 import static mindustry.content.Liquids.*;
@@ -127,6 +128,14 @@ public class EETEchTree {
         });
         vanillaNode(scathe, () ->{
             node(timeLauncher, () ->{
+            });
+        });
+        vanillaNode(onset, () ->{
+            node(onsetB, Seq.with(new SectorComplete(aegis)), () ->{
+                node(aegisB, () ->{
+                    node(intersectB, Seq.with(new SectorComplete(intersect)), () ->{
+                    });
+                });
             });
         });
     }
