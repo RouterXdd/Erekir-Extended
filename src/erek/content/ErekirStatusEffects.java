@@ -27,7 +27,6 @@ public class ErekirStatusEffects {
                     })
             );
             effectChance = 0.1f;
-            show = false;
         }};
     }
 }

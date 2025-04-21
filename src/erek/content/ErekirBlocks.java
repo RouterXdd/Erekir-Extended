@@ -10,6 +10,7 @@ import erek.classes.blocks.defence.*;
 import erek.classes.blocks.effects.Bomb;
 import erek.classes.blocks.liquids.HeatPump;
 import erek.classes.blocks.storage.*;
+import mindustry.Vars;
 import mindustry.entities.*;
 import mindustry.entities.bullet.*;
 import mindustry.entities.effect.*;
@@ -29,6 +30,7 @@ import mindustry.world.blocks.heat.*;
 import mindustry.world.blocks.payloads.Constructor;
 import mindustry.world.blocks.power.*;
 import mindustry.world.blocks.storage.*;
+import mindustry.world.blocks.units.Reconstructor;
 import mindustry.world.blocks.units.UnitFactory;
 import mindustry.world.consumers.*;
 import mindustry.world.draw.*;
@@ -46,12 +48,13 @@ import static mindustry.Vars.state;
 import static mindustry.content.Items.*;
 import static mindustry.content.Liquids.*;
 import static erek.content.ErekirItems.*;
+import static mindustry.content.UnitTypes.*;
 import static mindustry.type.ItemStack.*;
 
 public class ErekirBlocks {
     public static Block
             //environment
-            metalVent, pipe, rubidiumWallOre, bperillWallOre, staticFloor, staticWall,
+            metalVent, pipe, rubidiumWallOre, bperillWallOre, staticFloor, staticWall, rumblingRedWall,
             //crafting
             toxideKiln, replacer, neoplasmFurnace, bperillExtractor, hydrogenHeater, ozoneHeater, smallRedirector,
             //production
@@ -67,14 +70,15 @@ public class ErekirBlocks {
             //liquid
             heatPump,
             //turrets
-            ecription, blaster, crossbow, peweless, abyssHunter, conclusion, timeLauncher, endTime, bonfire,
+            ecription, blaster, crossbow, peweless, abyssHunter, conclusion, timeLauncher, endTime, bonfire, recollapse,
             //units
             rubidiumRefabricator, hugFabricator, gliderFabricator, toxityRefabricator
     ;
     public static void load(){
         //environment
-        Blocks.regolithWall.attributes.set(ErekirAttributes.slag, 0.1f);
-        Blocks.yellowStoneWall.attributes.set(ErekirAttributes.slag, 0.3f);
+        Blocks.smallHeatRedirector.requirements(Category.crafting, with(graphite, 14, toxide, 4));
+        Blocks.regolithWall.attributes.set(ErekirAttributes.slag, 0.05f);
+        Blocks.yellowStoneWall.attributes.set(ErekirAttributes.slag, 0.175f);
         metalVent = new SteamVent("metal-vent"){{
             parent = Blocks.metalFloor;
             variants = 0;
@@ -96,6 +100,7 @@ public class ErekirBlocks {
             itemDrop = ErekirItems.bperill;
         }};
         staticFloor = new Floor("static");
+        rumblingRedWall = new StaticWall("rumbling-red-wall");
         toxideKiln = new HeatCrafter("carbide-klin"){{
             requirements(Category.crafting, with(Items.silicon, 100, Items.graphite, 80, Items.tungsten, 80, Items.oxide, 80));
 
@@ -131,38 +136,36 @@ public class ErekirBlocks {
             requirements(Category.crafting, with(graphite, 175, silicon, 235, oxide, 35, Items.tungsten, 135));
             size = 3;
 
-            researchCostMultiplier = 0.75f;
-            craftTime = 220f;
+            researchCostMultiplier = 0.8f;
+            craftTime = 30f;
             rotate = true;
             invertFlip = true;
-            hasItems = true;
             group = BlockGroup.liquids;
-            itemCapacity = 10;
 
-            liquidCapacity = 20f;
-
-            consumeItems(with(beryllium, 2, tungsten, 2));
-            consumePower(3.75f);
+            liquidCapacity = 50f;
 
             drawer = new DrawMulti(
                     new DrawRegion("-bottom"),
                     new DrawLiquidTile(radon, 2f),
-                    new DrawRegion(),
-                    new DrawLiquidOutputs()
+                    new DrawLiquidTile(tungllium, 2f),
+                    new DrawRegion()
+                    //new DrawLiquidOutputs()
             );
 
             ambientSound = Sounds.electricHum;
             ambientSoundVolume = 0.08f;
 
             regionRotated1 = 3;
-            outputLiquids = LiquidStack.with(radon, 0.08f, tungllium, 0.035f);
+            consumeItems(with(beryllium, 2, tungsten, 2));
+            consumePower(3.75f);
+            outputLiquids = LiquidStack.with(radon, 0.1f, tungllium, 10 / 60f);
             liquidOutputDirections = new int[]{1, 4};
         }};
         neoplasmFurnace  = new HeatCrafter("neoplasm-furnance"){{
             requirements(Category.crafting, with(graphite, 290, silicon, 240, tungsten, 185, oxide, 120));
             craftEffect = Fx.none;
             heatRequirement = 3;
-            outputLiquid = new LiquidStack(neoplasm, 0.3f);
+            outputLiquid = new LiquidStack(neoplasm, 0.5f);
             craftTime = 185f;
             size = 3;
             hasPower = true;
@@ -186,7 +189,7 @@ public class ErekirBlocks {
             ambientSoundVolume = 0.12f;
 
             consumeItems(with(graphite, 3));
-            consumeLiquid(Liquids.slag, 0.25f);
+            consumeLiquid(arkycite, 20f/60f);
             consumePower(4f);
         }};
         bperillExtractor = new HeatCrafter("bperill-extractor"){{
@@ -213,7 +216,7 @@ public class ErekirBlocks {
                     new DrawDefault()
             );
             consumeItem(sand, 3);
-            consumeLiquids(LiquidStack.with(ozone, 12f / 60f, tungllium, 0.07f));
+            consumeLiquids(LiquidStack.with(ozone, 12f / 60f, tungllium, 5 / 60f));
             consumePower(5f);
         }};
         hydrogenHeater = new HeatProducer("hydrogen-heater"){{
@@ -234,6 +237,7 @@ public class ErekirBlocks {
             ambientSound = Sounds.hum;
             consumeLiquid(ozone, 0.5f / 60f);
         }};
+        if(false)
         smallRedirector = new HeatConductor("small-redirector"){{
             requirements(Category.crafting, with(graphite, 14, toxide, 6));
 
@@ -279,7 +283,7 @@ public class ErekirBlocks {
             requirements(Category.production, with(graphite, 65, silicon, 45, beryllium, 20));
             consumePower(20 / 60f);
 
-            drillTime = 90f;
+            drillTime = 130f;
             size = 2;
             attribute = ErekirAttributes.slag;
             output = silicon;
@@ -384,7 +388,7 @@ public class ErekirBlocks {
         bperillWall = new ErekirWall("bperill-wall"){{
             requirements(Category.defense, with(surgeAlloy, 6, bperill, 6));
             health = 260 * 4;
-            armor = 20;
+            armor = 24;
             lightningChance = 0.2f;
             lightningDamage = 25;
             lightningAmount = 3;
@@ -394,7 +398,7 @@ public class ErekirBlocks {
             requirements(Category.defense, ItemStack.mult(bperillWall.requirements, 4));
             health = 260 * 4 * 4;
             size = 2;
-            armor = 20;
+            armor = 24;
             lightningChance = 0.2f;
             lightningDamage = 25;
             lightningAmount = 3;
@@ -465,6 +469,7 @@ public class ErekirBlocks {
             speedBoost = 1.3f;
             hasBoost = false;
             fogRadius = 3;
+            baseColor = phaseColor = Pal.berylShot;
             consumePower(5f);
             consumeItem(beryllium, 5);
             squareSprite = false;
@@ -478,6 +483,7 @@ public class ErekirBlocks {
         }};
         bomb = new Bomb("bomb"){{
             requirements(Category.effect, BuildVisibility.sandboxOnly, with(tungsten, 20, silicon, 30));
+            destroyBlock = rumblingRedWall;
         }};
         bombConstructor = new BombConstructor("bomb-constructor"){{
             requirements(Category.units, BuildVisibility.sandboxOnly, with(silicon, 190, beryllium, 170, toxide, 80, rubidium, 110));
@@ -689,9 +695,9 @@ public class ErekirBlocks {
             }};
             outlineColor = Pal.darkOutline;
 
-            liquidConsumed = 12f / 60f;
+            liquidConsumed = 5f / 60f;
             targetUnderBlocks = false;
-            consumePower(190 / 60f);
+            consumePower(120 / 60f);
 
             float r = range = 150f;
 
@@ -701,11 +707,11 @@ public class ErekirBlocks {
 
             ammo(
                     water, new ContinuousFlameBulletType(){{
-                        damage = 20f;
+                        damage = 22f;
                         rangeChange = 0f;
                         length = r + rangeChange;
                         knockback = 1f;
-                        pierceCap = 4;
+                        pierceCap = 3;
                         buildingDamageMultiplier = 0.3f;
 
                         colors = new Color[]{Color.valueOf("0071e4").a(0.5f), Color.valueOf("1287ff").a(0.7f), Color.valueOf("3c9cff"), Color.white};
@@ -714,7 +720,7 @@ public class ErekirBlocks {
                         lightColor = hitColor = flareColor;
                     }},
                     radon, new ContinuousFlameBulletType(){{
-                        damage = 24f;
+                        damage = 36f;
                         rangeChange = 50f;
                         length = r + rangeChange;
                         knockback = 1.5f;
@@ -727,7 +733,7 @@ public class ErekirBlocks {
                         lightColor = hitColor = flareColor;
                     }},
                     neoplasm, new ContinuousFlameBulletType(){{
-                        damage = 30f;
+                        damage = 65f;
                         rangeChange = 90f;
                         length = r + rangeChange;
                         knockback = 2.8f;
@@ -749,7 +755,7 @@ public class ErekirBlocks {
             requirements(Category.turret, with(Items.silicon, 250, Items.graphite, 200, Items.oxide, 50, Items.carbide, 90));
             range = 180f;
             shootType = new ContinuousFlameBulletType(){{
-                damage = 30f;
+                damage = 45f;
                 length = 180;
                 buildingDamageMultiplier = 0.3f;
 
@@ -763,7 +769,7 @@ public class ErekirBlocks {
 
                 parts.add(new ShapePart(){{
                               progress = PartProgress.warmup.delay(0.2f);
-                              color = Color.valueOf("4874cf");
+                              color = Color.valueOf("7bc5ff");
                               circle = false;
                               hollow = true;
                               stroke = 0f;
@@ -777,7 +783,7 @@ public class ErekirBlocks {
                           }},
                         new HaloPart(){{
                             progress = PartProgress.warmup.delay(0.2f);
-                            color = Color.valueOf("4874cf");
+                            color = Color.valueOf("7bc5ff");
                             layer = Layer.effect;
                             y = -9;
 
@@ -811,50 +817,108 @@ public class ErekirBlocks {
             squareSprite = false;
         }};
         conclusion = new ItemTurret("conclusion"){{
-            requirements(Category.turret, with(toxide, 140, oxide, 170, silicon, 290, tungsten, 210));
+            requirements(Category.turret, with(graphite, 265, toxide, 140, oxide, 170, silicon, 290, tungsten, 210));
 
-            ammo(tungsten, new BasicBulletType(7, 120){{
-                width = 12;
-                height = 16;
-                shootEffect = Fx.shootBig2;
-                smokeEffect = Fx.shootSmokeDisperse;
+            ammo(tungsten, new BasicBulletType(7f, 25){{
+                sprite = "mine-bullet";
+                splashDamage = 15;
+                splashDamageRadius = 8 * 3.5f;
+                width = 12f;
+                hitSize = 7f;
+                height = 12f;
+                ammoMultiplier = 1;
+                hitColor = backColor = trailColor = Pal.tungstenShot;
+                lifetime = 300;
+                drag = 0.025f;
                 frontColor = Color.white;
-                backColor = trailColor = hitColor = Pal.orangeSpark;
-                ammoMultiplier = 3f;
-                sprite = "missile-large";
-
-                lifetime = 49f;
-                trailInterval = 3;
-                trailEffect = Fx.hitSquaresColor;
-                homingDelay = 8;
-                homingPower = 0.4f;
-                homingRange = 50;
-                buildingDamageMultiplier = 0.3f;
-
+                mixColorTo = Color.white;
+                trailWidth = 2f;
+                trailLength = 15;
                 hitEffect = despawnEffect = Fx.blastExplosion;
+                buildingDamageMultiplier = 0.3f;
+                fragBullets = 4;
+                shrinkY = 0;
+                fragBullet = new BasicBulletType(7, 15){{
+                    width = 4;
+                    height = 8;
+                    shootEffect = Fx.shootBig2;
+                    smokeEffect = Fx.shootSmokeDisperse;
+                    frontColor = Color.white;
+                    backColor = trailColor = hitColor = Pal.orangeSpark;
+                    sprite = "missile-large";
+
+                    lifetime = 25f;
+                    trailInterval = 3;
+                    trailEffect = Fx.hitSquaresColor;
+                    homingDelay = 3;
+                    homingPower = 0.4f;
+                    homingRange = 20;
+                    buildingDamageMultiplier = 0.3f;
+
+                    hitEffect = despawnEffect = Fx.blastExplosion;
+                }};
+            }}, toxide, new BasicBulletType(7f, 40){{
+                sprite = "mine-bullet";
+                splashDamage = 20;
+                splashDamageRadius = 8 * 3.5f;
+                width = 12f;
+                hitSize = 7f;
+                height = 12f;
+                ammoMultiplier = 1;
+                hitColor = backColor = trailColor = ErekirPal.toxideMid;
+                lifetime = 300;
+                drag = 0.025f;
+                frontColor = Color.white;
+                mixColorTo = Color.white;
+                trailWidth = 2f;
+                trailLength = 22;
+                hitEffect = despawnEffect = Fx.blastExplosion;
+                buildingDamageMultiplier = 0.3f;
+                fragBullets = 4;
+                shrinkY = 0;
+                fragBullet = new BasicBulletType(7, 30){{
+                    width = 4;
+                    height = 8;
+                    shootEffect = Fx.shootBig2;
+                    smokeEffect = Fx.shootSmokeDisperse;
+                    frontColor = Color.white;
+                    backColor = trailColor = hitColor = ErekirPal.toxideLight;
+                    sprite = "missile-large";
+
+                    lifetime = 25f;
+                    trailInterval = 3;
+                    trailEffect = Fx.hitSquaresColor;
+                    homingDelay = 3;
+                    homingPower = 0.4f;
+                    homingRange = 20;
+                    buildingDamageMultiplier = 0.3f;
+                    status = ErekirStatusEffects.overload;
+                    statusDuration = 90;
+
+                    hitEffect = despawnEffect = Fx.blastExplosion;
+                }};
             }});
 
             reload = 190f;
-            shootY = 9;
+            shootY = 7;
+            recoil = 3f;
             rotateSpeed = 6.5f;
             shootCone = 55f;
             consumeAmmoOnce = true;
             shootSound = Sounds.shootBig;
 
             drawer = new DrawTurret("reinforced-"){{
-                parts.add(new RegionPart("-blade"){{
-                              mirror = true;
+                parts.add(new RegionPart("-launch"){{
+                            progress = PartProgress.recoil;
+                              mirror = false;
                               under = true;
-                              moveX = -1.75f;
-                              moveY = -0.75f;
+                              moveX = 0f;
+                              moveY = 4f;
                           }});
             }};
-
-            shoot = new ShootSpread(){{
-                spread = 5.6f;
-                shots = 5;
-            }};
-            inaccuracy = 20f;
+            shoot.shots = 3;
+            shoot.shotDelay = 5;
+            inaccuracy = 2.5f;
 
             shootWarmupSpeed = 0.1f;
 
@@ -865,7 +929,7 @@ public class ErekirBlocks {
             size = 4;
 
             coolant = consume(new ConsumeLiquid(Liquids.water, 20f / 60f));
-            coolantMultiplier = 1.8f;
+            coolantMultiplier = 3f;
             squareSprite = false;
         }};
         timeLauncher = new PowerTurret("time-launcher"){{
@@ -878,6 +942,7 @@ public class ErekirBlocks {
                 speed = 0f;
                 keepVelocity = false;
                 collidesAir = false;
+                buildingDamageMultiplier = 0.2f;
 
                 spawnUnit = new MissileUnitType("time-swarmil"){{
                     speed = 4.5f;
@@ -896,6 +961,7 @@ public class ErekirBlocks {
                         shootOnDeath = true;
                         bullet = new ExplosionBulletType(70f, 15f){{
                             shootEffect = Fx.massiveExplosion;
+                            buildingDamageMultiplier = 0.2f;
                         }};
                     }});
                 }};
@@ -962,7 +1028,7 @@ public class ErekirBlocks {
             scaledHealth = 310;
             range = 500f;
             size = 4;
-            consumePower(14);
+            consumePower(17.5f);
 
             coolant = consume(new ConsumeLiquid(arkycite, 80f / 60f));
             coolantMultiplier = 1.5f;
@@ -1014,8 +1080,8 @@ public class ErekirBlocks {
                             under = true;
                             layerOffset = -0.3f;
                             turretHeatLayer = Layer.turret - 0.2f;
-                            moveY = -5f;
-                            moveX = 5;
+                            moveY = -5.5f;
+                            moveX = 5.5f;
 
                             color = Color.valueOf("f2ae8f");
                             heatColor = heatc;
@@ -1031,14 +1097,14 @@ public class ErekirBlocks {
                             radius = 8f;
                             rotation = 90;
                             layer = Layer.effect;
-                            y = -14;
+                            y = -18;
                             rotateSpeed = 2;
                         }},
                         new HaloPart(){{
                             progress = PartProgress.warmup;
                             color = Color.valueOf("f2ae8f");
                             layer = Layer.effect;
-                            y = -14;
+                            y = -18;
 
                             haloRotateSpeed = 5;
                             shapes = 4;
@@ -1053,9 +1119,22 @@ public class ErekirBlocks {
                             progress = PartProgress.warmup;
                             color = Color.valueOf("f2ae8f");
                             layer = Layer.effect;
-                            y = -14;
-                            haloRotation = 90;
-                            shapes = 2;
+                            y = -18;
+                            haloRotation = 120;
+                            shapes = 1;
+                            triLength = 0f;
+                            triLengthTo = 18f;
+                            haloRadius = 12f;
+                            hollow = false;
+                            tri = true;
+                            radius = 8f;
+                        }},new HaloPart(){{
+                            progress = PartProgress.warmup;
+                            color = Color.valueOf("f2ae8f");
+                            layer = Layer.effect;
+                            y = -18;
+                            haloRotation = -120;
+                            shapes = 1;
                             triLength = 0f;
                             triLengthTo = 18f;
                             haloRadius = 12f;
@@ -1076,7 +1155,7 @@ public class ErekirBlocks {
             }});
             outlineColor = Pal.darkOutline;
 
-            liquidConsumed = 20f / 60f;
+            liquidConsumed = 35f / 60f;
             targetUnderBlocks = false;
 
             float r = range = 240f;
@@ -1116,6 +1195,104 @@ public class ErekirBlocks {
             armor = 6;
             size = 5;
             squareSprite = false;
+        }};
+        recollapse = new ItemTurret("recollapse"){{
+            requirements(Category.turret, with(graphite, 1680, silicon, 1400, tungsten, 1180, oxide, 830, surgeAlloy, 690, bperill, 580, toxide, 865));
+
+            ammo(
+                    bperill, new BasicBulletType(10f, 300){{
+                        width = 11f;
+                        height = 11f;
+                        lifetime = 350;
+                        drag = 0.035f;
+                        hitColor = backColor = Color.valueOf("0a9489");
+                        frontColor = trailColor = Color.valueOf("37e995");
+                        sprite = "erek-sphere";
+                        trailWidth = 3f;
+                        trailLength = 18;
+                        hitEffect = despawnEffect = Fx.massiveExplosion;
+                        buildingDamageMultiplier = 0.3f;
+                        collides = false;
+                        homingPower = 0.1f;
+                        homingRange = 20;
+                        homingDelay = 5;
+                        intervalBullets = 2;
+                        bulletInterval = 14;
+                        intervalDelay = 50;
+                        shrinkY = 0;
+                        intervalBullet = new LaserBulletType(110){{
+                            colors = new Color[]{Color.valueOf("37e995").cpy().a(0.4f), Color.valueOf("37e995"), Color.white};
+
+                            buildingDamageMultiplier = 0.3f;
+                            hitEffect = Fx.hitLancer;
+                            hitSize = 5;
+                            lifetime = 16f;
+                            drawSize = 400f;
+                            length = 80f;
+                            ammoMultiplier = 1f;
+                            pierceCap = 4;
+                        }};
+                        parts.addAll(new ShapePart(){{
+                            color = Color.valueOf("0a9489");
+                            circle = false;
+                            hollow = true;
+                            sides = 4;
+                            stroke = 2f;
+                            strokeTo = 2f;
+                            radius = 10f;
+                            layer = Layer.effect;
+                            rotateSpeed = -1.5f;
+                        }},new ShapePart(){{
+                             color = Color.valueOf("37e995");
+                             circle = false;
+                             hollow = true;
+                             sides = 4;
+                             stroke = 2f;
+                             strokeTo = 2f;
+                             radius = 10f;
+                             layer = Layer.effect;
+                             rotateSpeed = 1.5f;
+                        }});
+                    }}
+            );
+
+            coolantMultiplier = 1f;
+            drawer = new DrawTurret("reinforced-"){{
+                parts.add(
+                        new RegionPart("-barrel"){{
+                            progress = PartProgress.recoil.curve(Interp.pow3In);
+                            moveY = -3f;
+                            mirror = false;
+                            under = true;
+                        }}
+                );
+            }};
+            liquidCapacity = 360;
+            outlineColor = Pal.darkOutline;
+            size = 5;
+            envEnabled |= Env.space;
+            reload = 230f;
+            recoil = 2f;
+            range = 300;
+            scaledHealth = 360;
+            researchCostMultiplier = 0.05f;
+            squareSprite = false;
+            consumeLiquid(arkycite,2);
+        }};
+        rubidiumRefabricator = new Reconstructor("rubidium-refabricator"){{
+            requirements(Category.units, with(rubidium, 190, tungsten, 170, silicon, 155, oxide, 125));
+            regionSuffix = "-dark";
+
+            size = 3;
+            consumePower(3f);
+            consumeLiquid(Liquids.hydrogen, 3f / 60f);
+            consumeItems(with(silicon, 55, rubidium, 45));
+
+            constructTime = 65f * 50f;
+
+            upgrades.addAll(
+                    new UnitType[]{stell, run}
+            );
         }};
         gliderFabricator = new UnitFactory("glider-fabricator"){{
             requirements(Category.units, with(Items.silicon, 260, Items.graphite, 200, oxide, 150, bperill, 120));

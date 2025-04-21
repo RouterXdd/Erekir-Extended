@@ -21,17 +21,14 @@ public class ErekirItems {
             hardness = 3;
             cost = 2f;
             healthScaling = 1.4f;
-            hiddenOnPlanets = new Planet[]{Planets.serpulo};
         }};
         bperill = new Item("bperill", Color.valueOf("18c99f")) {{
             charge = 1.5f;
             hardness = 4;
-            hiddenOnPlanets = new Planet[]{Planets.serpulo};
         }};
         toxide = new Item("toxide", Color.valueOf("cb3874")) {{
             cost = 1.5f;
             healthScaling = 0.75f;
-            hiddenOnPlanets = new Planet[]{Planets.serpulo};
         }};
         radon = new Liquid("radon", Color.valueOf("63a94c")){{
             gas = true;

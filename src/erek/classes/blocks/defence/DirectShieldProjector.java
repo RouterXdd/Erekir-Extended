@@ -127,7 +127,6 @@ public class DirectShieldProjector extends Block{
     public class DirectShieldProjectorBuild extends Building{
         public boolean broken = true;
         public float buildup, hit, warmup, shieldRadius;
-
         @Override
         public boolean shouldAmbientSound(){
             return !broken && shieldRadius > 1f;

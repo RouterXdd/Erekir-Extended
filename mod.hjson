@@ -2,8 +2,7 @@ name: "erek"
 displayName: "Erekir Extended"
 main: erek.ErekirExtended
 author: "RouterXdd/R.O.T."
-description: "Add the new sectors and content on Erekir
-Totally not a monopolist in erekir's mods"
+description: "Add the new sectors and content on Erekir. Now in JAVA"
 subtitle: "Rewritten in java"
 version: "0.3"
-minGameVersion: 146
+minGameVersion: 147

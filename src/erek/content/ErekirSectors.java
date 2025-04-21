@@ -13,17 +13,13 @@ public class ErekirSectors {
     connection, coresTrap, substruction, omegaOutpost, abandonedFactory,
                                         bladeBase, TRF,
     rubidiumFortress, rumblingGreatWall,
-    unstableSector, fort, controlTrap, lostCode,
+    unstableSector, fort, controlsTrap, lostCode,
     //Encore sectors
     onsetB, aegisB, intersectB;
     public static void load(){
         onsetB = new SectorPreset("onset-b", erekir, 82){{
             difficulty = 2;
-        }
-            public void loadIcon() {
-                if (Icon.terrain != null) this.uiIcon = this.fullIcon = Core.atlas.find("erek-terrain-b");
-            }
-        };
+        }};
         aegisB = new SectorPreset("aegis-b", erekir, 26){{
             difficulty = 4;
         }
@@ -40,5 +36,8 @@ public class ErekirSectors {
                 if (Icon.terrain != null) this.uiIcon = this.fullIcon = Core.atlas.find("erek-terrain-b");
             }
         };
+        rubidiumFortress = new SectorPreset("rubidium-fortress", erekir, 57){{
+            difficulty = 7;
+        }};
     }
 }

@@ -8,6 +8,7 @@ import mindustry.game.*;
 import mindustry.type.*;
 
 import static erek.content.ErekirSectors.*;
+import static erek.content.ErekirUnitTypes.*;
 import static mindustry.content.Blocks.*;
 import static mindustry.content.Items.*;
 import static mindustry.content.Liquids.*;
@@ -41,6 +42,13 @@ public class EETEchTree {
         vanillaNode(tungstenWall, () -> {
             node(rubidiumWall, () -> {
                 node(rubidiumWallLarge, () -> {
+
+                });
+            });
+        });
+        vanillaNode(reinforcedSurgeWall, () -> {
+            node(bperillWall, () -> {
+                node(bperillWallLarge, () -> {
 
                 });
             });
@@ -95,14 +103,16 @@ public class EETEchTree {
             node(neoplasmFurnace, () ->{
             });
         });
-        vanillaNode(heatRedirector, () ->{
-            node(smallRedirector, () ->{
-            });
-        });
         vanillaNode(plasmaBore, () ->{
             node(plasmaDrill, () ->{
                 node(plasmaQuarry, () ->{
 
+                });
+            });
+        });
+        vanillaNode(tankFabricator, () ->{
+            node(rubidiumRefabricator, Seq.with(new OnSector(rubidiumFortress)), () ->{
+                node(run, () ->{
                 });
             });
         });
@@ -126,6 +136,10 @@ public class EETEchTree {
                 });
             });
         });
+        vanillaNode(smite, () ->{
+            node(recollapse, () ->{
+            });
+        });
         vanillaNode(scathe, () ->{
             node(timeLauncher, () ->{
             });
@@ -136,6 +150,10 @@ public class EETEchTree {
                     node(intersectB, Seq.with(new SectorComplete(intersect)), () ->{
                     });
                 });
+            });
+        });
+        vanillaNode(intersect, () ->{
+            node(rubidiumFortress, () ->{
             });
         });
     }
