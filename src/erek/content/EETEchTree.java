@@ -142,6 +142,8 @@ public class EETEchTree {
         });
         vanillaNode(scathe, () ->{
             node(timeLauncher, () ->{
+                node(endTime, () ->{
+                });
             });
         });
         vanillaNode(onset, () ->{

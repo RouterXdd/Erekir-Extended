@@ -33,7 +33,7 @@ public class ErekirUnitTypes {
     //core units
     realise, encounter, cooperative,
     //sector
-    reroll, prevent, rupturer, phoenix
+    reroll, pellet, prevent, rupturer, phoenix
     ;
 
     public static void load() {
@@ -276,6 +276,49 @@ public class ErekirUnitTypes {
                 bullet = new BulletType(){{
                     maxRange = 70f;
                 }};
+            }});
+        }};
+        pellet = new ErekirUnitType("pellet"){{
+            speed = 1.85f;
+            drag = 0.1f;
+            flying = true;
+            health = 90;
+            armor = 50f;
+            engineSize = 0f;
+            hitSize = 11;
+            constructor = UnitEntity::create;
+            circleTarget = true;
+            drawCell = false;
+            parts.add(new HoverPart(){{
+                x = 0f;
+                y = 0;
+                mirror = false;
+                radius = 14f;
+                phase = 35f;
+                stroke = 2.5f;
+                sides = 6;
+                layerOffset = -0.001f;
+                color = Color.valueOf("d8465c");
+            }});
+
+            weapons.add(new Weapon(){{
+                y = 0f;
+                x = 0f;
+                reload = 42f;
+                ejectEffect = Fx.none;
+                mirror = false;
+                bullet = new LaserBulletType(30){{
+                    colors = new Color[]{Color.valueOf("d8465c").cpy().a(0.4f), Color.valueOf("d8465c"), Color.white};
+
+                    hitEffect = Fx.hitLancer;
+                    hitSize = 5;
+                    lifetime = 10f;
+                    drawSize = 400f;
+                    length = 50f;
+                    ammoMultiplier = 1f;
+                    pierceCap = 1;
+                }};
+                shootSound = Sounds.laser;
             }});
         }};
         prevent = new ErekirUnitType("prevent"){{
