@@ -24,7 +24,7 @@ public class ErekirUnitTypes {
     public static UnitType
     //alt tanks
     run, input, output, softlock,
-    //worms
+    //over-flyers
     way, path, road, bridge, highway,
     //support units
     heal, regeneration, repair, rebuild, reconstruct,
