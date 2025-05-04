@@ -11,6 +11,7 @@ import mindustry.entities.part.HoverPart;
 import mindustry.entities.part.RegionPart;
 import mindustry.entities.pattern.ShootSpread;
 import mindustry.gen.*;
+import mindustry.graphics.Layer;
 import mindustry.graphics.Pal;
 import mindustry.type.UnitType;
 import mindustry.type.Weapon;
@@ -79,6 +80,54 @@ public class ErekirUnitTypes {
                     trailWidth = 1f;
                     trailLength = 8;
                     despawnEffect = hitEffect = Fx.hitBulletColor;
+                }};
+            }});
+        }};
+        way = new ErekirUnitType("way"){{
+
+            faceTarget = true;
+            drag = 0.08f;
+            speed = 2f;
+            rotateSpeed = 4f;
+            itemCapacity = 0;
+            health = 640f;
+            armor = 2;
+            hitSize = 12f;
+            engineSize = 0;
+            legCount = 0;
+            hovering = true;
+            useEngineElevation = false;
+            shadowElevation = 0.7f;
+            groundLayer = Layer.legUnit;
+
+            constructor = LegsUnit::create;
+
+            setEnginesMirror(
+                    new UnitEngine(18 / 4f, 0f, 1.8f, 0f)
+            );
+
+            weapons.add(new Weapon("way-weapon"){{
+                reload = 70f;
+                mirror = false;
+                x = 0;
+                y = 0;
+                shootCone = 160;
+
+                bullet = new BulletType(){{
+                    collidesTiles = false;
+                    collides = false;
+                    hitSound = Sounds.explosion;
+                    hitColor = Color.valueOf("7090ea");
+
+                    rangeOverride = 40f;
+                    hitEffect = Fx.pulverize;
+                    shootEffect = Fx.scatheExplosionSmall;
+                    speed = 0f;
+                    splashDamageRadius = 50f;
+                    instantDisappear = true;
+                    splashDamage = 120f;
+                    hittable = false;
+                    collidesAir = true;
                 }};
             }});
         }};
